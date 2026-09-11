@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-12 00:03:12",
+ "updated_at": "2026-09-12 00:21:33",
  "repo": "JianghaoPi/my-tvbox-sources",
  "epg": "https://live.fanmingming.cn/e.xml",
  "summary": {
@@ -7,10 +7,10 @@
   "upstream_ok": 4,
   "channels_raw": 754,
   "urls_raw": 1800,
-  "channels_out": 387,
-  "urls_out": 723,
-  "groups": 58,
-  "probe_seconds": 563
+  "channels_out": 389,
+  "urls_out": 738,
+  "groups": 59,
+  "probe_seconds": 564
  },
  "sources": [
   {
