@@ -43,12 +43,12 @@ config/sources.json ──► scripts/update.py ──► output/*（自动 comm
 ## 当前源状态
 
 <!-- STATUS-START -->
-> 自动更新于 2026-09-11 20:24（5/12 源可用）。 手动触发：Actions → update → Run workflow。
+> 自动更新于 2026-09-11 20:51（5/12 源可用）。 手动触发：Actions → update → Run workflow。
 
 | 源 | 状态 | 生效地址 | 站点 | 错误 |
 |---|---|---|---|---|
-| 肥猫 | ✅ | http://肥猫.net/tv | 40 | - |
-| 饭太硬 | ❌ | - | 0 | www.饭太硬.com/tv: ConnectionError; www.饭太硬.net/tv: JSON 解析失败: Expecting propert... |
+| 肥猫 | ✅ | http://肥猫.net/tv | 39 | - |
+| 饭太硬 | ❌ | - | 0 | www.饭太硬.com/tv: ConnectionError; www.饭太硬.net/tv: 返回 HTML 页（挑战页或失效页, 15457B）; ... |
 | 王二小 | ✅ | https://d.kstore.dev/download/9280/wex.json | 63 | - |
 | 讴歌 | ❌ | - | 0 | tv.nxog.top/m/: HTTP 550; 欧歌.v.nxog.top/m/: ConnectionError; 欧歌zp8.v.nxog.top... |
 | 摸鱼 | ❌ | - | 0 | 我不是.摸鱼儿.top: 返回 HTML 页（挑战页或失效页, 138B）; 我不是.摸鱼儿.com: 返回 HTML 页（挑战页或失效页, 6990B）... |
