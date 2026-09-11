@@ -3,7 +3,7 @@
 > 项目《桌面端设计方案.md》主线 B · S1 的实现：自动聚合 + 冗余回退 + 缓存兜底。
 > 桌面端 / TVBox / 影视仓 直接填本仓库 `output/aggregate.json` 的 raw 地址即可。
 
-![源健康](https://img.shields.io/endpoint?url=https://cnb.cool/Going.Merry/my-tvbox-sources/-/git/raw/main/output/shield.json) ![直播源](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/live_shield.json)
+![源健康](https://img.shields.io/endpoint?url=https://cnb.cool/Going.Merry/my-tvbox-sources/-/git/raw/main/output/shield.json) ![直播源](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/live_shield.json) ![直播源](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/live_shield.json)
 
 ## 使用方式
 
@@ -69,7 +69,7 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 直播源状态
 
 <!-- LIVE-START -->
-> 直播源自动更新于 2026-09-11 23:41：上游 4/4 可用，产出 **385** 频道 / **710** 条有效地址（原始 1800，测速剔除失效 1090）。 手动触发：Actions → update → Run workflow。
+> 直播源自动更新于 2026-09-12 00:03：上游 4/4 可用，产出 **387** 频道 / **723** 条有效地址（原始 1800，测速剔除失效 1077）。 手动触发：Actions → update → Run workflow。
 
 | 直播源 | 状态 | 生效地址 | 素材条目 | 贡献地址 | 错误 |
 |---|---|---|---|---|---|

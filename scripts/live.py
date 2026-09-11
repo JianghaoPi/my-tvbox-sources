@@ -179,6 +179,21 @@ def _entry(name, group, url, sid, logo=None, tvg_id=None):
             "logo": logo or None, "tvg_id": tvg_id or None, "source": sid}
 
 
+def _split_extinf(line: str):
+    """按第一个"引号外"的逗号切分 #EXTINF 行。
+
+    上游常见 user-agent/referrer 属性值里带逗号（如 "Mozilla/5.0 ..., like Gecko)..."），
+    朴素的首逗号切分会把 UA 串当成频道名；引号感知后属性完整、频道名干净。
+    """
+    in_quote = False
+    for i, ch in enumerate(line):
+        if ch == '"':
+            in_quote = not in_quote
+        elif ch == ',' and not in_quote:
+            return line[:i], line[i + 1:]
+    return line, ""
+
+
 def parse_m3u_entries(text: str, sid: str):
     entries, dropped = [], 0
     pending = None
@@ -187,11 +202,9 @@ def parse_m3u_entries(text: str, sid: str):
         if not line:
             continue
         if line.upper().startswith("#EXTINF"):
-            comma = line.find(",")
-            attrs_part = line[:comma] if comma >= 0 else line
-            title = line[comma + 1:].strip() if comma >= 0 else ""
+            attrs_part, title = _split_extinf(line)
             attrs = dict(re.findall(r'([\w-]+)\s*=\s*"([^"]*)"', attrs_part))
-            pending = {"name": title, "group": (attrs.get("group-title") or "").strip(),
+            pending = {"name": title.strip(), "group": (attrs.get("group-title") or "").strip(),
                        "logo": (attrs.get("tvg-logo") or "").strip(),
                        "tvg_id": (attrs.get("tvg-id") or "").strip()}
             continue

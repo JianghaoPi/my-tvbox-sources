@@ -80,6 +80,7 @@ def main() -> int:
         "/alive3": (alive(3), 200, "video/mp2t"),
         "/alive4": (alive(4), 200, "video/mp2t"),
         "/alive5": (alive(5), 200, "video/mp2t"),
+        "/alive6": (alive(6), 200, "video/mp2t"),
         "/dead404": (b"gone", 404, "text/plain"),
         "/html": (b"<html>challenge page</html>", 200, "text/html"),
         "/a.m3u": (
@@ -89,7 +90,10 @@ def main() -> int:
             '#EXTINF:-1 group-title="卫视",湖南卫视 HD\n'
             f"{base}/dead404\n"
             '#EXTINF:-1 group-title="央视",CCTV-5+\n'
-            f"{base}/alive2\n".encode(), 200, "application/vnd.apple.mpegurl"),
+            f"{base}/alive2\n"
+            '#EXTINF:-1 tvg-id="lotus.mo" user-agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36'
+            ' (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36" group-title="港澳台",Lotus Macau HD\n'
+            f"{base}/alive6\n".encode(), 200, "application/vnd.apple.mpegurl"),
         "/b.txt": (
             "央视,#genre#\n"
             f"CCTV-1综合,{base}/alive3\n"
@@ -149,8 +153,10 @@ def main() -> int:
           and gmap.get("港澳台", {}).get("凤凰中文") == 1, json.dumps(gmap, ensure_ascii=False))
     s = status["summary"]
     check("status 汇总", s["upstream_total"] == 3 and s["upstream_ok"] == 2
-          and s["channels_out"] == 4 and s["urls_out"] == 5,
+          and s["channels_out"] == 5 and s["urls_out"] == 6,
           json.dumps(s, ensure_ascii=False))
+    check("EXTINF 属性值含逗号不污染频道名", "Lotus Macau HD" in txt and "like Gecko" not in txt
+          and "Lotus Macau HD" in m3u)
     src_c = next(x for x in status["sources"] if x["id"] == "c")
     check("HTML 上游被拒", not src_c["ok"] and "HTML" in (src_c["error"] or ""),
           json.dumps(src_c, ensure_ascii=False))
