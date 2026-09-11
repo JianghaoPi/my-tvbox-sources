@@ -1,20 +1,24 @@
 {
  "urls": [
   {
+   "name": "肥猫",
+   "url": "https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/feimao.json"
+  },
+  {
    "name": "王二小",
-   "url": "https://raw.githubusercontent.com/YOUR_GITHUB/my-tvbox-sources/main/output/wangerxiao.json"
+   "url": "https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/wangerxiao.json"
   },
   {
    "name": "4K小盒子",
-   "url": "https://raw.githubusercontent.com/YOUR_GITHUB/my-tvbox-sources/main/output/4k.json"
+   "url": "https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/4k.json"
   },
   {
    "name": "FongMi(蜂蜜)",
-   "url": "https://raw.githubusercontent.com/YOUR_GITHUB/my-tvbox-sources/main/output/fongmi.json"
+   "url": "https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/fongmi.json"
   },
   {
    "name": "qist合集",
-   "url": "https://raw.githubusercontent.com/YOUR_GITHUB/my-tvbox-sources/main/output/qist.json"
+   "url": "https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/qist.json"
   }
  ]
 }
