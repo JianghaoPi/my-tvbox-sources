@@ -310,7 +310,9 @@ def resolve_repo(cfg: dict) -> str:
     if os.environ.get("GITHUB_REPOSITORY"):
         return os.environ["GITHUB_REPOSITORY"]
     if os.environ.get("CNB") == "true":
-        # CNB 流水线内从 checkout 的 origin 推导 "组织/仓库"
+        # CNB 内置变量（docs.cnb.cool 默认环境变量）：格式 group_slug/repo_name
+        if os.environ.get("CNB_REPO_SLUG"):
+            return os.environ["CNB_REPO_SLUG"]
         import subprocess
         try:
             url = subprocess.run(["git", "remote", "get-url", "origin"],

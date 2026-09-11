@@ -3,19 +3,19 @@
 # 防死循环：自动提交只改 output/ 与 README.md，且 commit message 带 [skip ci]
 #（CNB 官方文档确认该标记对 push 事件生效，见 docs.cnb.cool/zh/build/skip-pipeline）。
 # crontab 使用北京时间（Asia/Shanghai），与 GitHub 侧 UTC 3/15 对齐为 11/23 点。
+# 注意：镜像必须带 git（slim 版不带，曾导致 code 127）；脚本行一律单引号，
+# 避免 YAML 把含 ": " 的行解析坏。
 
 main:
   push: &aggregate
     - docker:
-        image: python:3.12-slim
+        image: python:3.12
       stages:
-        - name: aggregate & commit
+        - name: aggregate
           script:
-            - pip install -r requirements.txt
-            - python scripts/update.py
-            - git config user.name "cnb-pipeline[bot]"
-            - git config user.email "cnb-pipeline@cnb.cool"
-            - git add output README.md
-            - git diff --cached --quiet || git commit -m "auto: update aggregated sources [skip ci]"
-            - git push "https://cnb:${CNB_TOKEN}@cnb.cool/$(git remote get-url origin | sed -E 's#https?://cnb\.cool/##; s#\.git$##').git" HEAD:main
+            - 'pip install -r requirements.txt'
+            - 'python scripts/update.py'
+        - name: commit outputs
+          script:
+            - 'bash scripts/cnb_push.sh'
   "crontab: 0 11,23 * * *": *aggregate
