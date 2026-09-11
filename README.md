@@ -3,7 +3,7 @@
 > 项目《桌面端设计方案.md》主线 B · S1 的实现：自动聚合 + 冗余回退 + 缓存兜底。
 > 桌面端 / TVBox / 影视仓 直接填本仓库 `output/aggregate.json` 的 raw 地址即可。
 
-![源健康](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/shield.json)
+![源健康](https://img.shields.io/endpoint?url=https://cnb.cool/Going.Merry/my-tvbox-sources/-/git/raw/main/output/shield.json)
 
 ## 使用方式
 
