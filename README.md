@@ -3,7 +3,7 @@
 > 项目《桌面端设计方案.md》主线 B · S1 的实现：自动聚合 + 冗余回退 + 缓存兜底。
 > 桌面端 / TVBox / 影视仓 直接填本仓库 `output/aggregate.json` 的 raw 地址即可。
 
-![源健康](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/shield.json) ![直播源](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/live_shield.json) ![直播源](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/live_shield.json) ![直播源](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/live_shield.json)
+![源健康](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/shield.json) ![直播源](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/live_shield.json) ![直播源](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/live_shield.json) ![直播源](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/live_shield.json) ![直播源](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/live_shield.json)
 
 ## 使用方式
 
@@ -48,7 +48,7 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 当前源状态
 
 <!-- STATUS-START -->
-> 自动更新于 2026-09-12 00:12（5/12 源可用）。 手动触发：Actions → update → Run workflow。
+> 自动更新于 2026-09-12 02:04（5/12 源可用）。 手动触发：Actions → update → Run workflow。
 
 | 源 | 状态 | 生效地址 | 站点 | 错误 |
 |---|---|---|---|---|
@@ -69,7 +69,7 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 直播源状态
 
 <!-- LIVE-START -->
-> 直播源自动更新于 2026-09-12 00:21：上游 4/4 可用，产出 **389** 频道 / **738** 条有效地址（原始 1800，测速剔除失效 1062）。 手动触发：Actions → update → Run workflow。
+> 直播源自动更新于 2026-09-12 02:12：上游 4/4 可用，产出 **395** 频道 / **743** 条有效地址（原始 1800，测速剔除失效 1057）。 手动触发：Actions → update → Run workflow。
 
 | 直播源 | 状态 | 生效地址 | 素材条目 | 贡献地址 | 错误 |
 |---|---|---|---|---|---|
