@@ -1,0 +1,113 @@
+{
+  "description": "TVBox 上游配置源列表：主地址在前、备用在后，依次尝试。来源：照抄 Lightconer/tvbox-ysc-config 模板清单 + 自建 GitHub 源。维护 SOP：每 1-2 周人工检查一次存活与冗余度（见 README）。",
+  "repo": "YOUR_GITHUB/my-tvbox-sources",
+  "sources": [
+    {
+      "id": "feimao",
+      "name": "肥猫",
+      "urls": [
+        "http://肥猫.com/tv",
+        "http://肥猫.net/tv",
+        "http://hello.肥猫.com/",
+        "https://6296.kstore.vip/facat.json"
+      ]
+    },
+    {
+      "id": "fantaiying",
+      "name": "饭太硬",
+      "urls": [
+        "http://www.饭太硬.com/tv",
+        "http://www.饭太硬.net/tv",
+        "http://www.饭太硬.xyz/tv",
+        "http://fty.xxooo.cf/tv",
+        "http://fty.888484.xyz/tv",
+        "http://fty.333232.xyz/tv"
+      ]
+    },
+    {
+      "id": "wangerxiao",
+      "name": "王二小",
+      "urls": [
+        "https://d.kstore.dev/download/9280/wex.json",
+        "https://9280.kstore.vip/aiwex.json",
+        "http://tvbox.王二小放牛娃.top",
+        "http://new.王二小放牛娃.top"
+      ]
+    },
+    {
+      "id": "ouge",
+      "name": "讴歌",
+      "urls": [
+        "http://tv.nxog.top/m/",
+        "https://欧歌.v.nxog.top/m/",
+        "http://欧歌zp8.v.nxog.top/m/"
+      ]
+    },
+    {
+      "id": "moyu",
+      "name": "摸鱼",
+      "urls": [
+        "http://我不是.摸鱼儿.top",
+        "http://我不是.摸鱼儿.com",
+        "http://我不是.摸鱼儿.xyz",
+        "http://清清.摸鱼儿.top"
+      ]
+    },
+    {
+      "id": "ok",
+      "name": "OK",
+      "urls": [
+        "http://ok321.top/ok",
+        "http://ok321.top/tv"
+      ]
+    },
+    {
+      "id": "xiaomi",
+      "name": "小米",
+      "urls": [
+        "http://www.mpanso.com/小米/DEMO.json",
+        "https://www.mpanso.com/小米/DEMO.json",
+        "http://miqk.cc/小米/DEMO.json"
+      ]
+    },
+    {
+      "id": "qiaoji",
+      "name": "巧记",
+      "urls": [
+        "http://cdn.qiaoji8.com/tvbox.json"
+      ]
+    },
+    {
+      "id": "4k",
+      "name": "4K小盒子",
+      "urls": [
+        "http://xhztv.top/4k.json",
+        "http://xhztv.top/xhz"
+      ]
+    },
+    {
+      "id": "xiaosa",
+      "name": "潇洒",
+      "urls": [
+        "https://9877.kstore.space/one.json",
+        "https://9877.kstore.space/AnotherD/api.json"
+      ]
+    },
+    {
+      "id": "fongmi",
+      "name": "FongMi(蜂蜜)",
+      "urls": [
+        "https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/config.json",
+        "https://cdn.jsdelivr.net/gh/FongMi/CatVodSpider@main/json/config.json"
+      ]
+    },
+    {
+      "id": "qist",
+      "name": "qist合集",
+      "urls": [
+        "https://raw.githubusercontent.com/qist/tvbox/master/367.json",
+        "https://cdn.jsdelivr.net/gh/qist/tvbox@master/367.json"
+      ]
+    }
+  ]
+}
