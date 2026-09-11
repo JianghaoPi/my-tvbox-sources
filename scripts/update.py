@@ -11,7 +11,7 @@
   3. 宽容 JSON：去 BOM / 剔注释 / strict=False / 截取首尾大括号
   4. 智能重试：瞬态错误（超时/连接/5xx/空响应）退避重试；确定性失败（4xx/非JSON/结构不对）直接跳下一个地址
   5. 缓存兜底：本次全挂 → 沿用上次成功的 output/<id>.json
-  6. 产物多样性：单仓聚合.json / 多仓订阅.json / <id>.json / status.json / shield.json
+  6. 产物多样性：aggregate.json（单仓聚合）/ subscribe.json（多仓订阅）/ <id>.json / status.json / shield.json
   7. 状态可视化：README 状态表自动回写 + shields.io 徽章
   8. 防死循环：脚本只写 output/ 与 README.md（触发路径是 config/ scripts/，互不重叠）
 
@@ -111,6 +111,18 @@ def looks_like_html(text: str) -> bool:
     return head.startswith("<")
 
 
+def decode_body(r: requests.Response) -> str:
+    """内容解码：不信 header 声明，先严格试 UTF-8，再试 GB18030，最后带错替换。
+    上游常见"头声明 GBK、实际发 UTF-8"（或反之），直接 r.text 会出西里尔乱码。"""
+    raw = r.content
+    for enc in ("utf-8", "gb18030"):
+        try:
+            return raw.decode(enc)
+        except (UnicodeDecodeError, ValueError):
+            continue
+    return raw.decode(r.encoding or "utf-8", errors="replace")
+
+
 # ---------------------------------------------------------------- 抓取
 
 def fetch_single(session: requests.Session, url: str):
@@ -133,7 +145,7 @@ def fetch_single(session: requests.Session, url: str):
             continue
         if r.status_code >= 400:  # 4xx → 确定性失败，直接跳下一个地址
             return None, f"HTTP {r.status_code}"
-        text = r.text or ""
+        text = decode_body(r)
         if not text.strip():
             last_err = "空响应"
             time.sleep(2 * (attempt + 1))
@@ -173,8 +185,9 @@ def expand_subscription(session: requests.Session, obj: dict):
         try:
             r = session.get(sub_url, timeout=FETCH_TIMEOUT, allow_redirects=True,
                             headers={"User-Agent": random.choice(UA_POOL)})
-            if r.status_code < 400 and not looks_like_html(r.text or ""):
-                parsed = lenient_json(r.text or "")
+            body = decode_body(r) if r.status_code < 400 else ""
+            if r.status_code < 400 and not looks_like_html(body):
+                parsed = lenient_json(body)
                 if isinstance(parsed, dict) and isinstance(parsed.get("sites"), list):
                     sub_obj = parsed
             elif r.status_code >= 400:
@@ -388,15 +401,15 @@ def main() -> int:
         })
         log(f"    结果: ok={used_url is not None} cached={cached} sites={total_sites} {latency}ms")
 
-    # ---- 产物 1+2: 单仓聚合 / 多仓订阅
+    # ---- 产物 1+2: 聚合配置 aggregate / 多仓订阅 subscribe（ASCII 文件名，避免中文路径编码歧义）
     usable = [s for s in status_list if s["ok"] or s["cached"]]
     if agg_configs:
-        write_json(OUTPUT_DIR / "单仓聚合.json", merge_configs(agg_configs))
+        write_json(OUTPUT_DIR / "aggregate.json", merge_configs(agg_configs))
     sub_urls = [{
         "name": s["name"],
         "url": f"{delivery_base(repo)}/{s['id']}.json",
     } for s in usable]
-    write_json(OUTPUT_DIR / "多仓订阅.json", {"urls": sub_urls})
+    write_json(OUTPUT_DIR / "subscribe.json", {"urls": sub_urls})
 
     # ---- 产物 4: status.json（机器可读，App/README 消费）
     ok_n = sum(1 for s in status_list if s["ok"])

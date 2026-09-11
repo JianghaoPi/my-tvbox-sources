@@ -1,7 +1,7 @@
 # My TVBox Sources · 自建 TVBox 配置聚合源仓库
 
 > 项目《桌面端设计方案.md》主线 B · S1 的实现：自动聚合 + 冗余回退 + 缓存兜底。
-> 桌面端 / TVBox / 影视仓 直接填本仓库 `output/单仓聚合.json` 的 raw 地址即可。
+> 桌面端 / TVBox / 影视仓 直接填本仓库 `output/aggregate.json` 的 raw 地址即可。
 
 ![源健康](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/shield.json)
 
@@ -9,12 +9,12 @@
 
 | 消费者 | 填入地址 |
 |---|---|
-| 桌面端 / TVBox（开箱即用） | `https://raw.githubusercontent.com/<仓库路径>/main/output/单仓聚合.json` |
-| 影视仓 / 支持多仓切换的端 | `https://raw.githubusercontent.com/<仓库路径>/main/output/多仓订阅.json` |
+| 桌面端 / TVBox（开箱即用） | `https://raw.githubusercontent.com/<仓库路径>/main/output/aggregate.json` |
+| 影视仓 / 支持多仓切换的端 | `https://raw.githubusercontent.com/<仓库路径>/main/output/subscribe.json` |
 | 各源独立配置 | `https://raw.githubusercontent.com/<仓库路径>/main/output/<id>.json` |
 | 健康状态（机器可读） | `https://raw.githubusercontent.com/<仓库路径>/main/output/status.json` |
 
-> 首次使用：把 `config/sources.json` 里的 `repo` 字段改成你的 `用户名/仓库名`（Actions 运行时会自动读 `GITHUB_REPOSITORY`，`多仓订阅.json` 里的地址才会正确）。
+> 首次使用：把 `config/sources.json` 里的 `repo` 字段改成你的 `用户名/仓库名`（Actions 运行时会自动读 `GITHUB_REPOSITORY`，`subscribe.json` 里的地址才会正确）。
 
 ## 工作原理
 
@@ -26,8 +26,8 @@ config/sources.json ──► scripts/update.py ──► output/*（自动 comm
 
 产物说明：
 
-- `单仓聚合.json` — 所有源 sites 合并去重（key+api 去重、key 冲突加后缀），开箱即用
-- `多仓订阅.json` — 各源独立入口列表，App 内可切换子源
+- `aggregate.json` — 所有源 sites 合并去重（key+api 去重、key 冲突加后缀），开箱即用
+- `subscribe.json` — 各源独立入口列表，App 内可切换子源
 - `<id>.json` — 每个上游源的最新成功快照（抓取失败时沿用上次的，保证不断供）
 - `status.json` — 各源健康状态（ok/used_url/error/站点数/耗时），App 与巡检消费
 - `shield.json` — README 徽章数据
@@ -43,12 +43,12 @@ config/sources.json ──► scripts/update.py ──► output/*（自动 comm
 ## 当前源状态
 
 <!-- STATUS-START -->
-> 自动更新于 2026-09-11 20:51（5/12 源可用）。 手动触发：Actions → update → Run workflow。
+> 自动更新于 2026-09-11 22:04（5/12 源可用）。 手动触发：Actions → update → Run workflow。
 
 | 源 | 状态 | 生效地址 | 站点 | 错误 |
 |---|---|---|---|---|
 | 肥猫 | ✅ | http://肥猫.net/tv | 39 | - |
-| 饭太硬 | ❌ | - | 0 | www.饭太硬.com/tv: ConnectionError; www.饭太硬.net/tv: 返回 HTML 页（挑战页或失效页, 15457B）; ... |
+| 饭太硬 | ❌ | - | 0 | www.饭太硬.com/tv: ConnectionError; www.饭太硬.net/tv: 返回 HTML 页（挑战页或失效页, 14213B）; ... |
 | 王二小 | ✅ | https://d.kstore.dev/download/9280/wex.json | 63 | - |
 | 讴歌 | ❌ | - | 0 | tv.nxog.top/m/: HTTP 550; 欧歌.v.nxog.top/m/: ConnectionError; 欧歌zp8.v.nxog.top... |
 | 摸鱼 | ❌ | - | 0 | 我不是.摸鱼儿.top: 返回 HTML 页（挑战页或失效页, 138B）; 我不是.摸鱼儿.com: 返回 HTML 页（挑战页或失效页, 6990B）... |
