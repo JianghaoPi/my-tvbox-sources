@@ -32,6 +32,9 @@ jobs:
       - name: Aggregate sources
         run: python scripts/update.py
 
+      - name: Refresh live sources
+        run: python scripts/live.py --aggregate output/aggregate.json
+
       - name: Commit & push outputs
         run: |
           git config user.name "github-actions[bot]"

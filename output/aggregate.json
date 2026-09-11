@@ -3331,6 +3331,12 @@
    "url": "",
    "playerType": 1,
    "ua": "okhttp/3.15"
+  },
+  {
+   "name": "自建直播·自动保活",
+   "type": 0,
+   "url": "https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/live.txt",
+   "epg": "https://live.fanmingming.cn/e.xml"
   }
  ],
  "parses": [

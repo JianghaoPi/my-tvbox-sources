@@ -1,0 +1,48 @@
+{
+  "description": "直播上游素材（S2.1）：每源主+备多地址，实测可达的镜像排前面（官方域名部分网络环境不通，留作兜底）。维护 SOP 同 sources.json：每 1-2 周看 README 直播状态表补源。",
+  "epg": "https://live.fanmingming.cn/e.xml",
+  "probe": {
+    "workers": 24,
+    "timeout": 5,
+    "conn_retries": 1,
+    "max_latency_ms": 0,
+    "max_urls_per_channel": 6
+  },
+  "sources": [
+    {
+      "id": "fmml",
+      "name": "fanmingming/live（IPV6直连）",
+      "urls": [
+        "https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u",
+        "https://cdn.jsdelivr.net/gh/fanmingming/live@main/tv/m3u/ipv6.m3u",
+        "https://gcore.jsdelivr.net/gh/fanmingming/live@main/tv/m3u/ipv6.m3u",
+        "https://live.fanmingming.com/tv/m3u/ipv6.m3u"
+      ]
+    },
+    {
+      "id": "iptv-org-cn",
+      "name": "iptv-org（中国）",
+      "urls": [
+        "https://iptv-org.github.io/iptv/countries/cn.m3u",
+        "https://raw.githubusercontent.com/iptv-org/iptv/gh-pages/countries/cn.m3u"
+      ]
+    },
+    {
+      "id": "iptv-org-zho",
+      "name": "iptv-org（中文语区）",
+      "urls": [
+        "https://iptv-org.github.io/iptv/languages/zho.m3u",
+        "https://raw.githubusercontent.com/iptv-org/iptv/gh-pages/languages/zho.m3u"
+      ]
+    },
+    {
+      "id": "iptv-api",
+      "name": "Guovin/iptv-api（每日自选）",
+      "urls": [
+        "https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u",
+        "https://gcore.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u",
+        "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u"
+      ]
+    }
+  ]
+}

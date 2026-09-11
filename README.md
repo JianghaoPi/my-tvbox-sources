@@ -3,36 +3,41 @@
 > 项目《桌面端设计方案.md》主线 B · S1 的实现：自动聚合 + 冗余回退 + 缓存兜底。
 > 桌面端 / TVBox / 影视仓 直接填本仓库 `output/aggregate.json` 的 raw 地址即可。
 
-![源健康](https://img.shields.io/endpoint?url=https://cnb.cool/Going.Merry/my-tvbox-sources/-/git/raw/main/output/shield.json)
+![源健康](https://img.shields.io/endpoint?url=https://cnb.cool/Going.Merry/my-tvbox-sources/-/git/raw/main/output/shield.json) ![直播源](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/live_shield.json)
 
 ## 使用方式
 
 | 消费者 | 填入地址 |
 |---|---|
-| 桌面端 / TVBox（开箱即用） | `https://raw.githubusercontent.com/<仓库路径>/main/output/aggregate.json` |
+| 桌面端 / TVBox（开箱即用，点播+直播） | `https://raw.githubusercontent.com/<仓库路径>/main/output/aggregate.json` |
 | 影视仓 / 支持多仓切换的端 | `https://raw.githubusercontent.com/<仓库路径>/main/output/subscribe.json` |
 | 各源独立配置 | `https://raw.githubusercontent.com/<仓库路径>/main/output/<id>.json` |
-| 健康状态（机器可读） | `https://raw.githubusercontent.com/<仓库路径>/main/output/status.json` |
+| 直播（TVBox / 影视仓 / 桌面端直播页） | `https://raw.githubusercontent.com/<仓库路径>/main/output/live.txt` |
+| 直播（VLC / 其他 m3u 播放器） | `https://raw.githubusercontent.com/<仓库路径>/main/output/live.m3u` |
+| 直播（FongMi JSON 消费端） | `https://raw.githubusercontent.com/<仓库路径>/main/output/live.json` |
+| 健康状态（机器可读） | `https://raw.githubusercontent.com/<仓库路径>/main/output/status.json` ｜ 直播：`live_status.json` |
 
 > 首次使用：把 `config/sources.json` 里的 `repo` 字段改成你的 `用户名/仓库名`（Actions 运行时会自动读 `GITHUB_REPOSITORY`，`subscribe.json` 里的地址才会正确）。
 
 ## 工作原理
 
 ```
-config/sources.json ──► scripts/update.py ──► output/*（自动 commit 回仓库）
-   人工维护：3~5 个上游源          抓取(多地址回退/重试/宽容解析)      每日 2 次定时 + 手动触发
-   每源主地址+备用地址              校验结构 → 缓存兜底 → 合并去重        .github/workflows/update.yml
+config/sources.json ──► scripts/update.py ──► output/*（点播：聚合/订阅/快照/状态）
+config/lives.json   ──► scripts/live.py   ──► output/live.*（直播：合并去重+测速保活）
+   人工维护：上游源列表               抓取(多地址回退/重试/宽容解析)       每日 2 次定时 + 手动触发
+   每源主地址+备用地址                 测速筛掉失效 → 状态回写 README       .github/workflows/update.yml + .cnb.yml
 ```
 
 产物说明：
 
-- `aggregate.json` — 所有源 sites 合并去重（key+api 去重、key 冲突加后缀），开箱即用
+- `aggregate.json` — 所有源 sites 合并去重（key+api 去重、key 冲突加后缀），开箱即用，末尾自带指向本仓库 live.txt 的直播条目
 - `subscribe.json` — 各源独立入口列表，App 内可切换子源
 - `<id>.json` — 每个上游源的最新成功快照（抓取失败时沿用上次的，保证不断供）
-- `status.json` — 各源健康状态（ok/used_url/error/站点数/耗时），App 与巡检消费
-- `shield.json` — README 徽章数据
+- `live.m3u` / `live.txt` / `live.json` — 直播源（同一份频道的三种格式；测速筛掉失效地址、按延迟排序、多备线自动切换）
+- `status.json` / `live_status.json` — 点播源 / 直播源健康状态（机器可读），App 与巡检消费
+- `shield.json` / `live_shield.json` — README 徽章数据
 
-本地调试：`pip install -r requirements.txt && python scripts/update.py`
+本地调试：`pip install -r requirements.txt && python scripts/update.py && python scripts/live.py --aggregate output/aggregate.json`
 
 ## 维护 SOP（每 1~2 周一次，约 5 分钟）
 
@@ -60,6 +65,19 @@ config/sources.json ──► scripts/update.py ──► output/*（自动 comm
 | FongMi(蜂蜜) | ✅ | https://raw.githubusercontent.com/FongMi/CatVodSpider/mai... | 3 | - |
 | qist合集 | ✅ | https://raw.githubusercontent.com/qist/tvbox/master/367.json | 106 | - |
 <!-- STATUS-END -->
+
+## 直播源状态
+
+<!-- LIVE-START -->
+> 直播源自动更新于 2026-09-11 23:41：上游 4/4 可用，产出 **385** 频道 / **710** 条有效地址（原始 1800，测速剔除失效 1090）。 手动触发：Actions → update → Run workflow。
+
+| 直播源 | 状态 | 生效地址 | 素材条目 | 贡献地址 | 错误 |
+|---|---|---|---|---|---|
+| fanmingming/live（IPV6直连） | ✅ | https://raw.githubusercontent.com/fanmingming/live/m... | 82 | 82 | - |
+| iptv-org（中国） | ✅ | https://iptv-org.github.io/iptv/countries/cn.m3u | 144 | 144 | - |
+| iptv-org（中文语区） | ✅ | https://iptv-org.github.io/iptv/languages/zho.m3u | 210 | 73 | - |
+| Guovin/iptv-api（每日自选） | ✅ | https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/outpu... | 1616 | 1501 | - |
+<!-- LIVE-END -->
 
 ## 免责声明
 
