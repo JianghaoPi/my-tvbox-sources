@@ -294,8 +294,40 @@ def rewrite_readme(table_md: str):
         encoding="utf-8")
 
 
+def rewrite_badge(base: str):
+    """README 顶部徽章指向本平台的 shield.json。"""
+    if not README_FILE.exists():
+        return
+    text = README_FILE.read_text(encoding="utf-8")
+    new = f"![源健康](https://img.shields.io/endpoint?url={base}/shield.json)"
+    out = re.sub(r"!\[源健康\]\([^)]*\)", new, text, count=1)
+    if out != text:
+        README_FILE.write_text(out, encoding="utf-8")
+
+
 def resolve_repo(cfg: dict) -> str:
-    return os.environ.get("GITHUB_REPOSITORY") or cfg.get("repo") or "YOUR_GITHUB/my-tvbox-sources"
+    """仓库 slug：优先 CI 环境变量，其次 git remote，最后配置文件占位。"""
+    if os.environ.get("GITHUB_REPOSITORY"):
+        return os.environ["GITHUB_REPOSITORY"]
+    if os.environ.get("CNB") == "true":
+        # CNB 流水线内从 checkout 的 origin 推导 "组织/仓库"
+        import subprocess
+        try:
+            url = subprocess.run(["git", "remote", "get-url", "origin"],
+                                 capture_output=True, text=True, timeout=10).stdout.strip()
+            m = re.search(r"cnb\.cool[:/](.+?)(\.git)?$", url)
+            if m:
+                return m.group(1)
+        except Exception:
+            pass
+    return cfg.get("repo") or "YOUR_GITHUB/my-tvbox-sources"
+
+
+def delivery_base(repo: str) -> str:
+    """本平台产物的匿名 raw 访问前缀（多仓订阅.json 内各源地址的基座）。"""
+    if os.environ.get("CNB") == "true":
+        return f"https://cnb.cool/{repo}/-/git/raw/main/output"
+    return f"https://raw.githubusercontent.com/{repo}/main/output"
 
 
 # ---------------------------------------------------------------- 主流程
@@ -360,7 +392,7 @@ def main() -> int:
         write_json(OUTPUT_DIR / "单仓聚合.json", merge_configs(agg_configs))
     sub_urls = [{
         "name": s["name"],
-        "url": f"https://raw.githubusercontent.com/{repo}/HEAD/output/{s['id']}.json".replace("/HEAD/", "/main/"),
+        "url": f"{delivery_base(repo)}/{s['id']}.json",
     } for s in usable]
     write_json(OUTPUT_DIR / "多仓订阅.json", {"urls": sub_urls})
 
@@ -383,8 +415,9 @@ def main() -> int:
         "message": f"{ok_n}/{len(status_list)} ok", "color": color,
     })
 
-    # ---- 产物 7: README 状态表回写
+    # ---- 产物 7: README 状态表回写 + 徽章指向本平台
     rewrite_readme(build_readme_table(status_list, repo, ok_n, len(status_list)))
+    rewrite_badge(delivery_base(repo))
 
     log(f"完成：{ok_n} 在线 / {sum(1 for s in status_list if s['cached'])} 缓存兜底 / "
         f"{sum(1 for s in status_list if not s['ok'] and not s['cached'])} 不可用；"

@@ -1,0 +1,21 @@
+# CNB 云原生构建管线 —— 与 .github/workflows/update.yml 等价的双写副本。
+# 两边各自定时跑同一份 scripts/update.py，产物 URL 自动适配各自平台的 raw 格式。
+# 防死循环：自动提交只改 output/ 与 README.md，且 commit message 带 [skip ci]
+#（CNB 官方文档确认该标记对 push 事件生效，见 docs.cnb.cool/zh/build/skip-pipeline）。
+# crontab 使用北京时间（Asia/Shanghai），与 GitHub 侧 UTC 3/15 对齐为 11/23 点。
+
+main:
+  push: &aggregate
+    - docker:
+        image: python:3.12-slim
+      stages:
+        - name: aggregate & commit
+          script:
+            - pip install -r requirements.txt
+            - python scripts/update.py
+            - git config user.name "cnb-pipeline[bot]"
+            - git config user.email "cnb-pipeline@cnb.cool"
+            - git add output README.md
+            - git diff --cached --quiet || git commit -m "auto: update aggregated sources [skip ci]"
+            - git push "https://cnb:${CNB_TOKEN}@cnb.cool/$(git remote get-url origin | sed -E 's#https?://cnb\.cool/##; s#\.git$##').git" HEAD:main
+  "crontab: 0 11,23 * * *": *aggregate

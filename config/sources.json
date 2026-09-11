@@ -1,6 +1,6 @@
 {
   "description": "TVBox 上游配置源列表：主地址在前、备用在后，依次尝试。来源：照抄 Lightconer/tvbox-ysc-config 模板清单 + 自建 GitHub 源。维护 SOP：每 1-2 周人工检查一次存活与冗余度（见 README）。",
-  "repo": "YOUR_GITHUB/my-tvbox-sources",
+  "repo": "JianghaoPi/my-tvbox-sources",
   "sources": [
     {
       "id": "feimao",
