@@ -20,6 +20,27 @@
      "urls": 1501
     }
    }
+  },
+  {
+   "ts": "2026-09-12 10:57:02",
+   "sources": {
+    "fmml": {
+     "ok": true,
+     "urls": 82
+    },
+    "iptv-org-cn": {
+     "ok": true,
+     "urls": 144
+    },
+    "iptv-org-zho": {
+     "ok": true,
+     "urls": 73
+    },
+    "iptv-api": {
+     "ok": true,
+     "urls": 1501
+    }
+   }
   }
  ]
 }
