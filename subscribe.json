@@ -1,0 +1,28 @@
+{
+ "urls": [
+  {
+   "name": "肥猫",
+   "url": "https://cnb.cool/Going.Merry/my-tvbox-sources/-/git/raw/main/output/feimao.json"
+  },
+  {
+   "name": "王二小",
+   "url": "https://cnb.cool/Going.Merry/my-tvbox-sources/-/git/raw/main/output/wangerxiao.json"
+  },
+  {
+   "name": "讴歌",
+   "url": "https://cnb.cool/Going.Merry/my-tvbox-sources/-/git/raw/main/output/ouge.json"
+  },
+  {
+   "name": "4K小盒子",
+   "url": "https://cnb.cool/Going.Merry/my-tvbox-sources/-/git/raw/main/output/4k.json"
+  },
+  {
+   "name": "FongMi(蜂蜜)",
+   "url": "https://cnb.cool/Going.Merry/my-tvbox-sources/-/git/raw/main/output/fongmi.json"
+  },
+  {
+   "name": "qist合集",
+   "url": "https://cnb.cool/Going.Merry/my-tvbox-sources/-/git/raw/main/output/qist.json"
+  }
+ ]
+}
