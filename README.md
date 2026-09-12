@@ -48,15 +48,15 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 当前源状态
 
 <!-- STATUS-START -->
-> 自动更新于 2026-09-11 22:04（5/12 源可用）。 手动触发：Actions → update → Run workflow。
+> 自动更新于 2026-09-11 23:05（5/12 源可用）。 手动触发：Actions → update → Run workflow。
 
 | 源 | 状态 | 生效地址 | 站点 | 错误 |
 |---|---|---|---|---|
 | 肥猫 | ✅ | http://肥猫.net/tv | 39 | - |
-| 饭太硬 | ❌ | - | 0 | www.饭太硬.com/tv: ConnectionError; www.饭太硬.net/tv: 返回 HTML 页（挑战页或失效页, 14213B）; ... |
-| 王二小 | ✅ | https://d.kstore.dev/download/9280/wex.json | 63 | - |
-| 讴歌 | ❌ | - | 0 | tv.nxog.top/m/: HTTP 550; 欧歌.v.nxog.top/m/: ConnectionError; 欧歌zp8.v.nxog.top... |
-| 摸鱼 | ❌ | - | 0 | 我不是.摸鱼儿.top: 返回 HTML 页（挑战页或失效页, 138B）; 我不是.摸鱼儿.com: 返回 HTML 页（挑战页或失效页, 6990B）... |
+| 饭太硬 | ❌ | - | 0 | www.饭太硬.com/tv: ConnectTimeout; www.饭太硬.net/tv: JSON 解析失败: Expecting property... |
+| 王二小 | ✅ | https://9280.kstore.vip/aiwex.json | 95 | - |
+| 讴歌 | 📦 缓存兜底 | - | 12 | tv.nxog.top/m/: 返回 HTML 页（挑战页或失效页, 4697B）; 欧歌.v.nxog.top/m/: 返回 HTML 页（挑战页或失效... |
+| 摸鱼 | ❌ | - | 0 | 我不是.摸鱼儿.top: ConnectTimeout; 我不是.摸鱼儿.com: 返回 HTML 页（挑战页或失效页, 6989B）; 我不是.摸鱼儿.... |
 | OK | ❌ | - | 0 | ok321.top/ok: ConnectionError; ok321.top/tv: ConnectionError |
 | 小米 | ❌ | - | 0 | www.mpanso.com/小米/DEMO.json: HTTP 404; www.mpanso.com/小米/DEMO.json: HTTP 404;... |
 | 巧记 | ❌ | - | 0 | cdn.qiaoji8.com/tvbox.json: ConnectionError |
