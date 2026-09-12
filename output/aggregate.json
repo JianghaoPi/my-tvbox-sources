@@ -590,7 +590,15 @@
    "changeable": 0
   },
   {
-   "key": "LiveAiBiLi",
+   "key": "Wexemby",
+   "name": "🀄️emby┃4K🀄️",
+   "type": 3,
+   "api": "csp_WexembyGuard",
+   "searchable": 1,
+   "changeable": 1
+  },
+  {
+   "key": "WexNewBiLiLive",
    "name": "🅱️哔哩┃直播🅱️",
    "type": 3,
    "api": "csp_WexNewBiLiLiveGuard",
