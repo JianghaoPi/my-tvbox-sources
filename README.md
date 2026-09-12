@@ -3,7 +3,7 @@
 > 项目《桌面端设计方案.md》主线 B · S1 的实现：自动聚合 + 冗余回退 + 缓存兜底。
 > 桌面端 / TVBox / 影视仓 直接填本仓库 `output/aggregate.json` 的 raw 地址即可。
 
-![源健康](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/shield.json) ![直播源](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/live_shield.json) ![直播源](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/live_shield.json) ![直播源](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/live_shield.json) ![直播源](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/live_shield.json)
+![源健康](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/shield.json) ![更新](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/update_shield.json) ![直播源](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/live_shield.json)
 
 ## 使用方式
 
@@ -15,6 +15,7 @@
 | 直播（TVBox / 影视仓 / 桌面端直播页） | `https://raw.githubusercontent.com/<仓库路径>/main/output/live.txt` |
 | 直播（VLC / 其他 m3u 播放器） | `https://raw.githubusercontent.com/<仓库路径>/main/output/live.m3u` |
 | 直播（FongMi JSON 消费端） | `https://raw.githubusercontent.com/<仓库路径>/main/output/live.json` |
+| 健康看板（浏览器打开，S3） | <https://jianghaopi.github.io/my-tvbox-sources/>（首次需在仓库 Settings → Pages 把 Source 设为 gh-pages 分支） |
 | 健康状态（机器可读） | `https://raw.githubusercontent.com/<仓库路径>/main/output/status.json` ｜ 直播：`live_status.json` |
 
 > 首次使用：把 `config/sources.json` 里的 `repo` 字段改成你的 `用户名/仓库名`（Actions 运行时会自动读 `GITHUB_REPOSITORY`，`subscribe.json` 里的地址才会正确）。
@@ -34,21 +35,25 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 - `subscribe.json` — 各源独立入口列表，App 内可切换子源
 - `<id>.json` — 每个上游源的最新成功快照（抓取失败时沿用上次的，保证不断供）
 - `live.m3u` / `live.txt` / `live.json` — 直播源（同一份频道的三种格式；测速筛掉失效地址、按延迟排序、多备线自动切换）
-- `status.json` / `live_status.json` — 点播源 / 直播源健康状态（机器可读），App 与巡检消费
-- `shield.json` / `live_shield.json` — README 徽章数据
+- `status.json` / `live_status.json` — 点播源 / 直播源健康状态（机器可读），含 S3.1 历史派生字段（连续失败次数 / 最近成功 / 延迟趋势），App 与看板消费
+- `status_history.json` / `live_status_history.json` — 跨次运行的状态历史（滚动 60 窗口，趋势由它派生）
+- `shield.json` / `live_shield.json` / `update_shield.json` — README 徽章数据（源健康 / 直播 / 更新时间）
+- `docs/index.html` — 健康看板（gh-pages 分支托管，见上方"健康看板"）
 
 本地调试：`pip install -r requirements.txt && python scripts/update.py && python scripts/live.py --aggregate output/aggregate.json`
 
-## 维护 SOP（每 1~2 周一次，约 5 分钟）
+## 维护 SOP（每 1~2 周一次，约 5 分钟，S3.4）
 
-1. 看下方状态表：连续 ❌ 且无 📦 的源 → 去社区（TVBox 接口维护合集、微信群分享）找它的**新地址**，替换 `urls[0]`、旧地址留作备用；
-2. 整个源彻底失效 → 删掉，并从社区列表补 1 个新源进来（刻意保持同类冗余 3~5 个）;
-3. 提交即自动触发一次全量聚合，无需等待定时任务。
+1. 看下方状态表 / [健康看板](https://jianghaopi.github.io/my-tvbox-sources/)：**连续 ❌ 且无 📦** 的源（看板上有"连续 N 次"标记与延迟趋势）→ 去社区（TVBox 接口维护合集、微信群分享）找它的**新地址**，替换 `urls[0]`、旧地址留作备用；
+2. 整个源彻底失效 → 删掉，并从社区列表补 1 个新源进来。**冗余度检查**：点播同类源刻意保持 3~5 个、直播上游保持 3~4 个——低于这个数就该补，否则上游批量失效时兜底不够；
+3. 直播侧同法检查 `config/lives.json`：某上游"贡献地址"连续走低（看板趋势）→ 换镜像或补新上游；
+4. 提交即自动触发一次全量聚合，无需等待定时任务；
+5. 桌面端 App 会在启动时读取本仓库 status.json：上游连续失效 / 缓存兜底 / 仓库停超 36h 时自动弹提示（同一份状态只提示一次），无需人工巡检。
 
 ## 当前源状态
 
 <!-- STATUS-START -->
-> 自动更新于 2026-09-11 23:05（5/12 源可用）。 手动触发：Actions → update → Run workflow。
+> 自动更新于 2026-09-12 10:34（5/12 源可用）。 手动触发：Actions → update → Run workflow。
 
 | 源 | 状态 | 生效地址 | 站点 | 错误 |
 |---|---|---|---|---|
@@ -56,7 +61,7 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 | 饭太硬 | ❌ | - | 0 | www.饭太硬.com/tv: ConnectTimeout; www.饭太硬.net/tv: JSON 解析失败: Expecting property... |
 | 王二小 | ✅ | https://9280.kstore.vip/aiwex.json | 95 | - |
 | 讴歌 | 📦 缓存兜底 | - | 12 | tv.nxog.top/m/: 返回 HTML 页（挑战页或失效页, 4697B）; 欧歌.v.nxog.top/m/: 返回 HTML 页（挑战页或失效... |
-| 摸鱼 | ❌ | - | 0 | 我不是.摸鱼儿.top: ConnectTimeout; 我不是.摸鱼儿.com: 返回 HTML 页（挑战页或失效页, 6989B）; 我不是.摸鱼儿.... |
+| 摸鱼 | ❌ | - | 0 | 我不是.摸鱼儿.top: ConnectTimeout; 我不是.摸鱼儿.com: 返回 HTML 页（挑战页或失效页, 6990B）; 我不是.摸鱼儿.... |
 | OK | ❌ | - | 0 | ok321.top/ok: ConnectionError; ok321.top/tv: ConnectionError |
 | 小米 | ❌ | - | 0 | www.mpanso.com/小米/DEMO.json: HTTP 404; www.mpanso.com/小米/DEMO.json: HTTP 404;... |
 | 巧记 | ❌ | - | 0 | cdn.qiaoji8.com/tvbox.json: ConnectionError |
@@ -69,7 +74,7 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 直播源状态
 
 <!-- LIVE-START -->
-> 直播源自动更新于 2026-09-12 02:12：上游 4/4 可用，产出 **395** 频道 / **743** 条有效地址（原始 1800，测速剔除失效 1057）。 手动触发：Actions → update → Run workflow。
+> 直播源自动更新于 2026-09-12 10:43：上游 4/4 可用，产出 **385** 频道 / **718** 条有效地址（原始 1800，测速剔除失效 1082）。 手动触发：Actions → update → Run workflow。
 
 | 直播源 | 状态 | 生效地址 | 素材条目 | 贡献地址 | 错误 |
 |---|---|---|---|---|---|

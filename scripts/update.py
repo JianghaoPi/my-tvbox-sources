@@ -33,10 +33,13 @@ ROOT = Path(__file__).resolve().parent.parent
 CONFIG_FILE = ROOT / "config" / "sources.json"
 OUTPUT_DIR = ROOT / "output"
 README_FILE = ROOT / "README.md"
+HISTORY_FILE = OUTPUT_DIR / "status_history.json"   # S3.1: 跨次运行状态历史（滚动窗口）
 
 FETCH_TIMEOUT = 15          # 单请求超时（秒）
 TRANSIENT_RETRIES = 2       # 瞬态错误重试次数（退避 2s、4s）
 MAX_SUB_SOURCES = 8         # 上游若为多仓订阅格式，最多展开抓取的子源数
+HISTORY_MAX_RUNS = 60       # 历史保留的运行次数（每日 2 次 ≈ 最近 30 天）
+HISTORY_TREND = 10          # 延迟趋势取最近 N 次
 CST = timezone(timedelta(hours=8))
 
 UA_POOL = [
@@ -121,6 +124,64 @@ def decode_body(r: requests.Response) -> str:
         except (UnicodeDecodeError, ValueError):
             continue
     return raw.decode(r.encoding or "utf-8", errors="replace")
+
+
+# ---------------------------------------------------------------- 状态历史（S3.1）
+
+def history_load(path: Path) -> dict:
+    try:
+        return lenient_json(path.read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001  首次运行/文件损坏都从空历史开始
+        return {"runs": []}
+
+
+def history_append(path: Path, states: dict) -> dict:
+    """追加一次运行快照 {sid: {ok,cached,latency_ms}} 并裁剪窗口，返回更新后的历史。"""
+    hist = history_load(path)
+    hist.setdefault("runs", []).append({
+        "ts": datetime.now(CST).strftime("%Y-%m-%d %H:%M:%S"),
+        "sources": states,
+    })
+    hist["runs"] = hist["runs"][-HISTORY_MAX_RUNS:]
+    write_json(path, hist)
+    return hist
+
+
+def history_derive(hist: dict, sid: str, field: str = "latency_ms") -> dict:
+    """从历史派生单源健康字段：连续失败次数、最近成功/失败时间、数值趋势（field 可换，如 urls）。"""
+    runs = hist.get("runs", [])
+    entries = [r.get("sources", {}).get(sid) for r in runs]
+    entries = [e for e in entries if isinstance(e, dict)]
+    cf = 0
+    for e in reversed(entries):
+        if e.get("ok"):
+            break
+        cf += 1
+    last_ok = next((r["ts"] for r in reversed(runs)
+                    if isinstance(r.get("sources", {}).get(sid), dict) and r["sources"][sid].get("ok")), None)
+    last_fail = next((r["ts"] for r in reversed(runs)
+                      if isinstance(r.get("sources", {}).get(sid), dict) and not r["sources"][sid].get("ok")), None)
+    trend = [e[field] for e in entries[-HISTORY_TREND:] if isinstance(e.get(field), int)]
+    return {"consecutive_failures": cf, "last_success_at": last_ok,
+            "last_failure_at": last_fail, "trend": trend}
+
+
+def relative_hours(ts) -> str:
+    """'x小时前' 供徽章/看板用；解析失败返回原文。"""
+    if not ts:
+        return "首次运行"
+    try:
+        dt = datetime.strptime(ts, "%Y-%m-%d %H:%M:%S").replace(tzinfo=CST)
+        minutes = int((datetime.now(CST) - dt).total_seconds() // 60)
+        if minutes < 1:
+            return "刚刚"
+        if minutes < 60:
+            return f"{minutes}分钟前"
+        if minutes < 60 * 48:
+            return f"{minutes // 60}小时前"
+        return f"{minutes // (60 * 24)}天前"
+    except Exception:  # noqa: BLE001
+        return ts
 
 
 # ---------------------------------------------------------------- 抓取
@@ -308,12 +369,14 @@ def rewrite_readme(table_md: str):
 
 
 def rewrite_badge(base: str):
-    """README 顶部徽章指向本平台的 shield.json。"""
+    """README 顶部徽章指向本平台的 shield.json / update_shield.json。"""
     if not README_FILE.exists():
         return
     text = README_FILE.read_text(encoding="utf-8")
     new = f"![源健康](https://img.shields.io/endpoint?url={base}/shield.json)"
-    out = re.sub(r"!\[源健康\]\([^)]*\)", new, text, count=1)
+    out = re.sub(r"!\[源健康\]\([^)]*\)", new, text)  # 全部替换：防双平台 CI 交替改写产生的重复徽章
+    upd = f"![更新](https://img.shields.io/endpoint?url={base}/update_shield.json)"
+    out = re.sub(r"!\[更新\]\([^)]*\)", upd, out)
     if out != text:
         README_FILE.write_text(out, encoding="utf-8")
 
@@ -401,6 +464,19 @@ def main() -> int:
         })
         log(f"    结果: ok={used_url is not None} cached={cached} sites={total_sites} {latency}ms")
 
+    # ---- S3.1: 状态历史 → 连续失败/最近成功/延迟趋势
+    states = {s["id"]: {"ok": s["ok"], "cached": s["cached"], "latency_ms": s["latency_ms"]}
+              for s in status_list}
+    hist_prev = history_load(HISTORY_FILE)
+    prev_run_ts = hist_prev["runs"][-1]["ts"] if hist_prev.get("runs") else None
+    hist = history_append(HISTORY_FILE, states)
+    for s in status_list:
+        d = history_derive(hist, s["id"])
+        s["consecutive_failures"] = d["consecutive_failures"]
+        s["last_success_at"] = d["last_success_at"]
+        s["last_failure_at"] = d["last_failure_at"]
+        s["latency_trend_ms"] = d["trend"]
+
     # ---- 产物 1+2: 聚合配置 aggregate / 多仓订阅 subscribe（ASCII 文件名，避免中文路径编码歧义）
     usable = [s for s in status_list if s["ok"] or s["cached"]]
     if agg_configs:
@@ -411,13 +487,14 @@ def main() -> int:
     } for s in usable]
     write_json(OUTPUT_DIR / "subscribe.json", {"urls": sub_urls})
 
-    # ---- 产物 4: status.json（机器可读，App/README 消费）
+    # ---- 产物 4: status.json（机器可读，App/README 消费；S3.1 含历史派生字段）
     ok_n = sum(1 for s in status_list if s["ok"])
     write_json(OUTPUT_DIR / "status.json", {
         "updated_at": datetime.now(CST).strftime("%Y-%m-%d %H:%M:%S"),
         "repo": repo,
         "summary": {"total": len(status_list), "ok": ok_n,
-                    "cached": sum(1 for s in status_list if s["cached"])},
+                    "cached": sum(1 for s in status_list if s["cached"]),
+                    "runs_tracked": len(hist["runs"])},
         "sources": status_list,
     })
 
@@ -428,6 +505,11 @@ def main() -> int:
     write_json(OUTPUT_DIR / "shield.json", {
         "schemaVersion": 1, "label": "源健康",
         "message": f"{ok_n}/{len(status_list)} ok", "color": color,
+    })
+    write_json(OUTPUT_DIR / "update_shield.json", {
+        "schemaVersion": 1, "label": "更新",
+        "message": relative_hours(prev_run_ts),
+        "color": "blue",
     })
 
     # ---- 产物 7: README 状态表回写 + 徽章指向本平台

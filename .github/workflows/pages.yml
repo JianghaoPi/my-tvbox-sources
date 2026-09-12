@@ -1,0 +1,38 @@
+# GitHub Pages：把看板（docs/index.html）与产物 JSON 发布到 gh-pages 分支。
+# 首次使用需在仓库 Settings → Pages → Source 选 gh-pages 分支 / (root)，一次性配置。
+# update.yml 的 [skip ci] 自动提交会触发本工作流（paths 含 output/**）→ 看板数据随每轮聚合刷新。
+# 注意：update.yml 的 push paths 不含 output/**，本工作流推的 gh-pages 分支不会反向触发聚合，无死循环。
+
+name: pages
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'output/**'
+      - 'docs/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prepare public dir
+        run: |
+          mkdir -p public
+          cp docs/index.html public/
+          cp output/*.json public/
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          force_orphan: true
+          commit_message: "pages: refresh dashboard data [skip ci]"

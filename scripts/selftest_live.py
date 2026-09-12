@@ -173,6 +173,27 @@ def main() -> int:
           json.dumps(lives, ensure_ascii=False))
 
     srv.shutdown()
+
+    # ---- 第二轮：假源 B 整体失效 → 断言 S3.1 历史派生字段（新端口，mock 内容同步重建）
+    srv2, port2 = serve()
+    base2 = f"http://127.0.0.1:{port2}"
+    srv2.routes = {p: (body.replace(base.encode(), base2.encode()) if isinstance(body, bytes) else body,
+                       status, ctype)
+                   for p, (body, status, ctype) in srv.routes.items()}
+    srv2.routes["/b.txt"] = (b"gone", 404, "text/plain")
+    cfg.write_text(cfg.read_text(encoding="utf-8").replace(base, base2), encoding="utf-8")
+    print("== live.py 第二轮（假源B失效）S3.1 字段自测 ==")
+    rc2 = live.main(cfg_path=cfg, out_dir=out_dir, readme_path=readme,
+                    aggregate_path=aggregate, delivery="http://base.test/output")
+    check("第二轮 main 返回 0", rc2 == 0)
+    st2 = json.loads((out_dir / "live_status.json").read_text(encoding="utf-8"))
+    src_a = next(x for x in st2["sources"] if x["id"] == "a")
+    src_b = next(x for x in st2["sources"] if x["id"] == "b")
+    check("第二轮 假源A 连续失败 0 + 最近成功时间", src_a["ok"] and src_a["consecutive_failures"] == 0
+          and bool(src_a["last_success_at"]) and len(src_a["urls_trend"]) == 2)
+    check("第二轮 假源B 连续失败 1", not src_b["ok"] and src_b["consecutive_failures"] == 1
+          and bool(src_b["last_failure_at"]))
+
     print(f"\n{'全部通过 ✅' if not FAILURES else '失败: ' + '；'.join(FAILURES)}")
     return 0 if not FAILURES else 1
 

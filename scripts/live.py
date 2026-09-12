@@ -42,8 +42,8 @@ import urllib3
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from update import (  # noqa: E402
     CST, CONFIG_FILE, OUTPUT_DIR, README_FILE, ROOT, UA_POOL,
-    decode_body, delivery_base, lenient_json, log, looks_like_html,
-    punycode_url, resolve_repo,
+    decode_body, delivery_base, history_append, history_derive,
+    lenient_json, log, looks_like_html, punycode_url, resolve_repo,
 )
 
 import random  # noqa: E402  update.py 导入时已完成随机播种
@@ -497,9 +497,9 @@ def rewrite_live_badge(base: str):
         return
     text = README_FILE.read_text(encoding="utf-8")
     new = f"![直播源](https://img.shields.io/endpoint?url={base}/live_shield.json)"
-    out = re.sub(r"!\[直播源\]\([^)]*\)", new, text, count=1)
-    if out == text:  # 尚无直播徽章 → 挂到源健康徽章后面
-        out = re.sub(r"(!\[源健康\]\([^)]*\))", r"\1 " + new, text, count=1)
+    out = re.sub(r"!\[直播源\]\([^)]*\)", new, text)  # 全部替换：防双平台 CI 交替改写产生的重复徽章
+    if "![直播源]" not in out:  # 尚无直播徽章 → 挂到源健康徽章后面
+        out = re.sub(r"(!\[源健康\]\([^)]*\))", r"\1 " + new, out, count=1)
     if out != text:
         README_FILE.write_text(out, encoding="utf-8")
 
@@ -626,6 +626,17 @@ def main(cfg_path=None, out_dir=None, readme_path=None, aggregate_path=None,
 
     write_json = lambda p, obj: p.write_text(  # noqa: E731
         json.dumps(obj, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    # ---- S3.1: 直播上游状态历史 → 连续失败/最近成功/贡献地址趋势
+    live_states = {s["id"]: {"ok": s["ok"], "urls": s.get("urls", 0)} for s in status_list}
+    live_hist = history_append(out / "live_status_history.json", live_states)
+    for s in status_list:
+        d = history_derive(live_hist, s["id"], field="urls")
+        s["last_success_at"] = d["last_success_at"]
+        s["last_failure_at"] = d["last_failure_at"]
+        s["consecutive_failures"] = d["consecutive_failures"]
+        s["urls_trend"] = d["trend"]
+
     write_json(out / "live_status.json", {
         "updated_at": datetime.now(CST).strftime("%Y-%m-%d %H:%M:%S"),
         "repo": repo, "epg": epg,
