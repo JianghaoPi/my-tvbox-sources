@@ -1,6 +1,7 @@
 {
-  "description": "TVBox 上游配置源列表：主地址在前、备用在后，依次尝试。来源：照抄 Lightconer/tvbox-ysc-config 模板清单 + 自建 GitHub 源。维护 SOP：每 1-2 周人工检查一次存活与冗余度（见 README）。",
+  "description": "TVBox 上游配置源列表：主地址在前、备用在后，依次尝试。来源：照抄 Lightconer/tvbox-ysc-config 模板清单 + 自建 GitHub 源。维护 SOP：每 1-2 周人工检查一次存活与冗余度（见 README）。site_block_keywords：聚合时按名称剔除的点播站点关键词（上游常塞虎牙/斗鱼等网络直播站进点播列表）。",
   "repo": "JianghaoPi/my-tvbox-sources",
+  "site_block_keywords": ["虎牙", "斗鱼"],
   "sources": [
     {
       "id": "feimao",

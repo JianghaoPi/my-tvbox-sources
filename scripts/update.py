@@ -14,6 +14,8 @@
   6. 产物多样性：aggregate.json（单仓聚合）/ subscribe.json（多仓订阅）/ <id>.json / status.json / shield.json
   7. 状态可视化：README 状态表自动回写 + shields.io 徽章
   8. 防死循环：脚本只写 output/ 与 README.md（触发路径是 config/ scripts/，互不重叠）
+  9. 内容治理：点播站点黑名单（config/sources.json 的 site_block_keywords，默认虎牙/斗鱼）
+     剔除上游塞入的网络直播站；上游自带的无效 lives（相对路径/空地址/Xtream API）不进产物
 
 本地调试：python3 scripts/update.py
 """
@@ -41,6 +43,7 @@ MAX_SUB_SOURCES = 8         # 上游若为多仓订阅格式，最多展开抓�
 HISTORY_MAX_RUNS = 60       # 历史保留的运行次数（每日 2 次 ≈ 最近 30 天）
 HISTORY_TREND = 10          # 延迟趋势取最近 N 次
 CST = timezone(timedelta(hours=8))
+DEFAULT_SITE_BLOCK = ("虎牙", "斗鱼")  # 站点黑名单默认关键词：上游常塞虎牙/斗鱼网络直播站进点播列表
 
 UA_POOL = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
@@ -269,14 +272,30 @@ def site_identity(site: dict):
     return (str(site.get("key", "")), str(site.get("api", "")))
 
 
-def merge_configs(configs: list):
-    """把多份配置合并为单仓聚合：sites 按 (key,api) 去重、key 冲突加后缀；
-    lives/parses 按 name+url 去重；flags 并集；spider 取出现最多的。"""
+def valid_live_entry(x: dict) -> bool:
+    """直播条目结构可用性：文本直播管线（type 0）要求名称 + 绝对 http(s) 地址。
+    上游点播配置自带的 lives 常见相对路径（./lives/x.txt，本仓库并不发布该文件）、
+    空地址、Xtream player_api.php（JSON 用户接口，文本解析不出频道），一律剔除。"""
+    url = str(x.get("url") or "").strip()
+    if not str(x.get("name") or "").strip():
+        return False
+    if not url.lower().startswith(("http://", "https://")):
+        return False
+    return "player_api.php" not in url.lower()
+
+
+def merge_configs(configs: list, block_keywords=()):
+    """把多份配置合并为单仓聚合：sites 按 (key,api) 去重、key 冲突加后缀、
+    名称命中黑名单关键词的站点剔除；lives/parses 按 name+url 去重（lives 另做
+    结构过滤，无效条目不进产物）；flags 并集；spider 取出现最多的。"""
     seen_ident, seen_key = set(), Counter()
-    merged_sites = []
+    merged_sites, blocked_sites = [], 0
     for cfg in configs:
         for site in cfg.get("sites", []):
             if not isinstance(site, dict):
+                continue
+            if any(kw and kw in str(site.get("name", "")) for kw in block_keywords):
+                blocked_sites += 1
                 continue
             ident = site_identity(site)
             if ident in seen_ident:
@@ -291,6 +310,8 @@ def merge_configs(configs: list):
                 key = site["key"]
             seen_key[key] += 1
             merged_sites.append(site)
+    if blocked_sites:
+        log(f"    站点黑名单剔除 {blocked_sites} 个（关键词：{'、'.join(k for k in block_keywords if k)}）")
 
     def dedup_list(field, idfunc):
         out, seen = [], set()
@@ -305,7 +326,11 @@ def merge_configs(configs: list):
                 out.append(item)
         return out
 
-    lives = dedup_list("lives", lambda x: (str(x.get("name", "")), str(x.get("url", ""))))
+    all_lives = dedup_list("lives", lambda x: (str(x.get("name", "")), str(x.get("url", ""))))
+    lives = [x for x in all_lives if valid_live_entry(x)]
+    dropped_lives = len(all_lives) - len(lives)
+    if dropped_lives:
+        log(f"    直播配置剔除 {dropped_lives} 条无效项（相对路径/空地址/Xtream API）")
     parses = dedup_list("parses", lambda x: (str(x.get("name", "")), str(x.get("url", ""))))
     flags = sorted({f for cfg in configs for f in (cfg.get("flags") or []) if isinstance(f, str)})
     spiders = Counter(str(cfg["spider"]) for cfg in configs if cfg.get("spider"))
@@ -480,7 +505,8 @@ def main() -> int:
     # ---- 产物 1+2: 聚合配置 aggregate / 多仓订阅 subscribe（ASCII 文件名，避免中文路径编码歧义）
     usable = [s for s in status_list if s["ok"] or s["cached"]]
     if agg_configs:
-        write_json(OUTPUT_DIR / "aggregate.json", merge_configs(agg_configs))
+        block_kw = cfg.get("site_block_keywords") or list(DEFAULT_SITE_BLOCK)
+        write_json(OUTPUT_DIR / "aggregate.json", merge_configs(agg_configs, block_kw))
     sub_urls = [{
         "name": s["name"],
         "url": f"{delivery_base(repo)}/{s['id']}.json",

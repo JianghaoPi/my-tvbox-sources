@@ -18,7 +18,7 @@
      txt 按 TVBox 兼容惯例对 name/group 里的 "type" 做同形字替换、URL 里的做百分号编码
      （否则含 "type" 字样的文本会被 TVBox 误判成 FongMi JSON 格式）
   6. 空结果不覆盖旧产物：上游全挂/全部测死时保住上次有效清单（同 update.py 缓存兜底思想）
-  7. aggregate.json 自动注入 lives 条目 → 用户导入点播聚合配置即自带直播源
+  7. aggregate.json 自动注入 lives 条目（首位，置顶于上游杂源）→ 导入点播聚合配置即自带直播源
   8. 防死循环：只写 output/ 与 README.md 的 LIVE 标记段（与 update.py 的 STATUS 段互不重叠）
 
 运行顺序约定：CI 中先 update.py 后 live.py（live.py 会对本轮 aggregate.json 做 lives 注入）。
@@ -505,7 +505,9 @@ def rewrite_live_badge(base: str):
 
 
 def inject_into_aggregate(aggregate_path: Path, live_url: str, epg: str):
-    """把本仓库 live.txt 作为 lives 条目注入 aggregate.json → 导入点播聚合即自带直播。"""
+    """把本仓库 live.txt 作为 lives 条目注入 aggregate.json 首位。
+    必须置顶：桌面端直播页只加载 lives 前几条（slice(0, 8)）并默认展示首条来源，
+    排在末尾会被上游杂源挤掉（曾导致自建 IPTV 源完全不在直播页出现）。"""
     if not aggregate_path.exists():
         return
     try:
@@ -515,7 +517,7 @@ def inject_into_aggregate(aggregate_path: Path, live_url: str, epg: str):
         entry = {"name": "自建直播·自动保活", "type": 0, "url": live_url}
         if epg:
             entry["epg"] = epg
-        lives.append(entry)
+        lives.insert(0, entry)
         agg["lives"] = lives
         aggregate_path.write_text(json.dumps(agg, ensure_ascii=False, indent=1), encoding="utf-8")
         log(f"    aggregate.json 已注入直播条目（{live_url.rsplit('/', 1)[-1]}）")
