@@ -3418,7 +3418,7 @@
   {
    "name": "自建直播·自动保活",
    "type": 0,
-   "url": "https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/live.txt",
+   "url": "https://cnb.cool/Going.Merry/my-tvbox-sources/-/git/raw/main/output/live.txt",
    "epg": "https://live.fanmingming.cn/e.xml"
   }
  ],
