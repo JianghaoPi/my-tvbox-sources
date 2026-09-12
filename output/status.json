@@ -32,7 +32,7 @@
    "name": "王二小",
    "ok": true,
    "cached": false,
-   "used_url": "https://9280.kstore.vip/aiwex.json",
+   "used_url": "https://d.kstore.dev/download/9280/wex.json",
    "error": null,
    "sites": 95,
    "latency_ms": 12691
@@ -53,7 +53,7 @@
    "ok": false,
    "cached": false,
    "used_url": null,
-   "error": "我不是.摸鱼儿.top: ConnectTimeout; 我不是.摸鱼儿.com: 返回 HTML 页（挑战页或失效页, 6989B）; 我不是.摸鱼儿.xyz: ConnectionError; 清清.摸鱼儿.top: ConnectTimeout",
+   "error": "我不是.摸鱼儿.top: 返回 HTML 页（挑战页或失效页, 138B）; 我不是.摸鱼儿.com: 返回 HTML 页（挑战页或失效页, 6990B）; 我不是.摸鱼儿.xyz: ConnectionError; 清清.摸鱼儿.top: ConnectionError",
    "sites": 0,
    "latency_ms": 126503
   },
