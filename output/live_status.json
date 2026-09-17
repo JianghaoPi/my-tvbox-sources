@@ -1,16 +1,16 @@
 {
- "updated_at": "2026-09-17 16:24:36",
+ "updated_at": "2026-09-18 02:53:39",
  "repo": "JianghaoPi/my-tvbox-sources",
  "epg": "https://live.fanmingming.cn/e.xml",
  "summary": {
   "upstream_total": 4,
   "upstream_ok": 4,
   "channels_raw": 755,
-  "urls_raw": 1801,
-  "channels_out": 396,
-  "urls_out": 747,
+  "urls_raw": 1802,
+  "channels_out": 389,
+  "urls_out": 736,
   "groups": 58,
-  "probe_seconds": 471
+  "probe_seconds": 482
  },
  "sources": [
   {
@@ -21,7 +21,7 @@
    "error": "",
    "entries": 82,
    "urls": 82,
-   "last_success_at": "2026-09-17 16:24:36",
+   "last_success_at": "2026-09-18 02:53:39",
    "last_failure_at": null,
    "consecutive_failures": 0,
    "urls_trend": [
@@ -45,7 +45,7 @@
    "error": "",
    "entries": 144,
    "urls": 144,
-   "last_success_at": "2026-09-17 16:24:36",
+   "last_success_at": "2026-09-18 02:53:39",
    "last_failure_at": null,
    "consecutive_failures": 0,
    "urls_trend": [
@@ -67,9 +67,9 @@
    "ok": true,
    "used_url": "https://iptv-org.github.io/iptv/languages/zho.m3u",
    "error": "",
-   "entries": 211,
-   "urls": 74,
-   "last_success_at": "2026-09-17 16:24:36",
+   "entries": 212,
+   "urls": 75,
+   "last_success_at": "2026-09-18 02:53:39",
    "last_failure_at": null,
    "consecutive_failures": 0,
    "urls_trend": [
@@ -77,12 +77,12 @@
     73,
     73,
     73,
-    73,
     74,
     74,
     74,
     74,
-    74
+    74,
+    75
    ]
   },
   {
@@ -93,7 +93,7 @@
    "error": "",
    "entries": 1616,
    "urls": 1501,
-   "last_success_at": "2026-09-17 16:24:36",
+   "last_success_at": "2026-09-18 02:53:39",
    "last_failure_at": null,
    "consecutive_failures": 0,
    "urls_trend": [
