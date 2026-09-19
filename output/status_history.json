@@ -974,6 +974,71 @@
      "latency_ms": 104
     }
    }
+  },
+  {
+   "ts": "2026-09-19 15:44:08",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 60482
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 56177
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 415
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13025
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25894
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24825
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12956
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12345
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 163
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 589
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 74
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 258
+    }
+   }
   }
  ]
 }
