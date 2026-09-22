@@ -53,12 +53,12 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 当前源状态
 
 <!-- STATUS-START -->
-> 自动更新于 2026-09-22 03:52（5/12 源可用）。 手动触发：Actions → update → Run workflow。
+> 自动更新于 2026-09-22 16:08（5/12 源可用）。 手动触发：Actions → update → Run workflow。
 
 | 源 | 状态 | 生效地址 | 站点 | 错误 |
 |---|---|---|---|---|
 | 肥猫 | ✅ | http://肥猫.net/tv | 39 | - |
-| 饭太硬 | ❌ | - | 0 | www.饭太硬.com/tv: ConnectionError; www.饭太硬.net/tv: JSON 解析失败: Expecting propert... |
+| 饭太硬 | ❌ | - | 0 | www.饭太硬.com/tv: ConnectionError; www.饭太硬.net/tv: 返回 HTML 页（挑战页或失效页, 14213B）; ... |
 | 王二小 | ✅ | https://d.kstore.dev/download/9280/wex.json | 63 | - |
 | 讴歌 | 📦 缓存兜底 | - | 12 | tv.nxog.top/m/: HTTP 403; 欧歌.v.nxog.top/m/: SSLError; 欧歌zp8.v.nxog.top/m/: HT... |
 | 摸鱼 | ❌ | - | 0 | 我不是.摸鱼儿.top: 返回 HTML 页（挑战页或失效页, 101400B）; 我不是.摸鱼儿.com: 返回 HTML 页（挑战页或失效页, 698... |
@@ -74,7 +74,7 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 直播源状态
 
 <!-- LIVE-START -->
-> 直播源自动更新于 2026-09-22 04:01：上游 4/4 可用，产出 **383** 频道 / **726** 条有效地址（原始 1802，测速剔除失效 1076）。 手动触发：Actions → update → Run workflow。
+> 直播源自动更新于 2026-09-22 16:16：上游 4/4 可用，产出 **399** 频道 / **747** 条有效地址（原始 1802，测速剔除失效 1055）。 手动触发：Actions → update → Run workflow。
 
 | 直播源 | 状态 | 生效地址 | 素材条目 | 贡献地址 | 错误 |
 |---|---|---|---|---|---|
