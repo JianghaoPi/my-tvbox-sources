@@ -53,15 +53,15 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 当前源状态
 
 <!-- STATUS-START -->
-> 自动更新于 2026-09-29 05:00（5/12 源可用）。 手动触发：Actions → update → Run workflow。
+> 自动更新于 2026-09-29 17:24（4/12 源可用）。 手动触发：Actions → update → Run workflow。
 
 | 源 | 状态 | 生效地址 | 站点 | 错误 |
 |---|---|---|---|---|
-| 肥猫 | ✅ | http://肥猫.net/tv | 39 | - |
+| 肥猫 | 📦 缓存兜底 | - | 39 | 肥猫.com/tv: ConnectTimeout; 肥猫.net/tv: HTTP 522; hello.肥猫.com/: ConnectTimeout... |
 | 饭太硬 | ❌ | - | 0 | www.饭太硬.com/tv: ConnectionError; www.饭太硬.net/tv: 返回 HTML 页（挑战页或失效页, 12042B）; ... |
 | 王二小 | ✅ | https://d.kstore.dev/download/9280/wex.json | 63 | - |
 | 讴歌 | 📦 缓存兜底 | - | 12 | tv.nxog.top/m/: HTTP 403; 欧歌.v.nxog.top/m/: SSLError; 欧歌zp8.v.nxog.top/m/: HT... |
-| 摸鱼 | ❌ | - | 0 | 我不是.摸鱼儿.top: 返回 HTML 页（挑战页或失效页, 101392B）; 我不是.摸鱼儿.com: 返回 HTML 页（挑战页或失效页, 699... |
+| 摸鱼 | ❌ | - | 0 | 我不是.摸鱼儿.top: 返回 HTML 页（挑战页或失效页, 101399B）; 我不是.摸鱼儿.com: 返回 HTML 页（挑战页或失效页, 699... |
 | OK | ❌ | - | 0 | ok321.top/ok: ConnectionError; ok321.top/tv: ConnectionError |
 | 小米 | ❌ | - | 0 | www.mpanso.com/小米/DEMO.json: HTTP 404; www.mpanso.com/小米/DEMO.json: HTTP 404;... |
 | 巧记 | ❌ | - | 0 | cdn.qiaoji8.com/tvbox.json: ConnectionError |
@@ -74,7 +74,7 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 直播源状态
 
 <!-- LIVE-START -->
-> 直播源自动更新于 2026-09-29 05:09：上游 4/4 可用，产出 **385** 频道 / **736** 条有效地址（原始 1803，测速剔除失效 1067）。 手动触发：Actions → update → Run workflow。
+> 直播源自动更新于 2026-09-29 17:32：上游 4/4 可用，产出 **391** 频道 / **724** 条有效地址（原始 1803，测速剔除失效 1079）。 手动触发：Actions → update → Run workflow。
 
 | 直播源 | 状态 | 生效地址 | 素材条目 | 贡献地址 | 错误 |
 |---|---|---|---|---|---|
