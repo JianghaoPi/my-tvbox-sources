@@ -53,15 +53,15 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 当前源状态
 
 <!-- STATUS-START -->
-> 自动更新于 2026-10-07 03:59（5/12 源可用）。 手动触发：Actions → update → Run workflow。
+> 自动更新于 2026-10-07 17:39（4/12 源可用）。 手动触发：Actions → update → Run workflow。
 
 | 源 | 状态 | 生效地址 | 站点 | 错误 |
 |---|---|---|---|---|
-| 肥猫 | ✅ | http://肥猫.net/tv | 39 | - |
+| 肥猫 | 📦 缓存兜底 | - | 39 | 肥猫.com/tv: ConnectTimeout; 肥猫.net/tv: HTTP 522; hello.肥猫.com/: ConnectTimeout... |
 | 饭太硬 | ❌ | - | 0 | www.饭太硬.com/tv: ConnectionError; www.饭太硬.net/tv: JSON 解析失败: Expecting propert... |
 | 王二小 | ✅ | https://d.kstore.dev/download/9280/wex.json | 63 | - |
 | 讴歌 | 📦 缓存兜底 | - | 12 | tv.nxog.top/m/: HTTP 403; 欧歌.v.nxog.top/m/: SSLError; 欧歌zp8.v.nxog.top/m/: HT... |
-| 摸鱼 | ❌ | - | 0 | 我不是.摸鱼儿.top: 返回 HTML 页（挑战页或失效页, 102839B）; 我不是.摸鱼儿.com: 返回 HTML 页（挑战页或失效页, 698... |
+| 摸鱼 | ❌ | - | 0 | 我不是.摸鱼儿.top: 返回 HTML 页（挑战页或失效页, 102849B）; 我不是.摸鱼儿.com: 返回 HTML 页（挑战页或失效页, 699... |
 | OK | ❌ | - | 0 | ok321.top/ok: ConnectionError; ok321.top/tv: ConnectionError |
 | 小米 | ❌ | - | 0 | www.mpanso.com/小米/DEMO.json: HTTP 404; www.mpanso.com/小米/DEMO.json: HTTP 404;... |
 | 巧记 | ❌ | - | 0 | cdn.qiaoji8.com/tvbox.json: ConnectionError |
@@ -74,13 +74,13 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 直播源状态
 
 <!-- LIVE-START -->
-> 直播源自动更新于 2026-10-07 04:07：上游 4/4 可用，产出 **396** 频道 / **738** 条有效地址（原始 1803，测速剔除失效 1065）。 手动触发：Actions → update → Run workflow。
+> 直播源自动更新于 2026-10-07 17:49：上游 4/4 可用，产出 **389** 频道 / **735** 条有效地址（原始 1804，测速剔除失效 1069）。 手动触发：Actions → update → Run workflow。
 
 | 直播源 | 状态 | 生效地址 | 素材条目 | 贡献地址 | 错误 |
 |---|---|---|---|---|---|
 | fanmingming/live（IPV6直连） | ✅ | https://raw.githubusercontent.com/fanmingming/live/m... | 82 | 82 | - |
-| iptv-org（中国） | ✅ | https://iptv-org.github.io/iptv/countries/cn.m3u | 145 | 145 | - |
-| iptv-org（中文语区） | ✅ | https://iptv-org.github.io/iptv/languages/zho.m3u | 213 | 75 | - |
+| iptv-org（中国） | ✅ | https://iptv-org.github.io/iptv/countries/cn.m3u | 146 | 146 | - |
+| iptv-org（中文语区） | ✅ | https://iptv-org.github.io/iptv/languages/zho.m3u | 214 | 75 | - |
 | Guovin/iptv-api（每日自选） | ✅ | https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/outpu... | 1616 | 1501 | - |
 <!-- LIVE-END -->
 
