@@ -1,71 +1,6 @@
 {
  "runs": [
   {
-   "ts": "2026-09-13 01:37:16",
-   "sources": {
-    "feimao": {
-     "ok": false,
-     "cached": true,
-     "latency_ms": 44329
-    },
-    "fantaiying": {
-     "ok": false,
-     "cached": false,
-     "latency_ms": 56213
-    },
-    "wangerxiao": {
-     "ok": true,
-     "cached": false,
-     "latency_ms": 364
-    },
-    "ouge": {
-     "ok": false,
-     "cached": true,
-     "latency_ms": 46159
-    },
-    "moyu": {
-     "ok": false,
-     "cached": false,
-     "latency_ms": 37956
-    },
-    "ok": {
-     "ok": false,
-     "cached": false,
-     "latency_ms": 24846
-    },
-    "xiaomi": {
-     "ok": false,
-     "cached": false,
-     "latency_ms": 12811
-    },
-    "qiaoji": {
-     "ok": false,
-     "cached": false,
-     "latency_ms": 12388
-    },
-    "4k": {
-     "ok": true,
-     "cached": false,
-     "latency_ms": 397
-    },
-    "xiaosa": {
-     "ok": false,
-     "cached": false,
-     "latency_ms": 861
-    },
-    "fongmi": {
-     "ok": true,
-     "cached": false,
-     "latency_ms": 106
-    },
-    "qist": {
-     "ok": true,
-     "cached": false,
-     "latency_ms": 49
-    }
-   }
-  },
-  {
    "ts": "2026-09-13 15:52:35",
    "sources": {
     "feimao": {
@@ -3897,6 +3832,71 @@
      "ok": true,
      "cached": false,
      "latency_ms": 47
+    }
+   }
+  },
+  {
+   "ts": "2026-10-13 06:24:39",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 118506
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 62465
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 333
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13115
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 26029
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24724
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42955
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12962
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 190
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 1054
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 148
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 104
     }
    }
   }
