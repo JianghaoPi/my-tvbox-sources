@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-18 01:43:25",
+ "updated_at": "2026-10-18 15:39:21",
  "repo": "JianghaoPi/my-tvbox-sources",
  "summary": {
   "total": 12,
@@ -16,12 +16,11 @@
    "used_url": "http://肥猫.net/tv",
    "error": null,
    "sites": 40,
-   "latency_ms": 59602,
+   "latency_ms": 60262,
    "consecutive_failures": 0,
-   "last_success_at": "2026-10-18 01:43:25",
+   "last_success_at": "2026-10-18 15:39:21",
    "last_failure_at": "2026-10-15 15:56:55",
    "latency_trend_ms": [
-    118090,
     117596,
     121990,
     118189,
@@ -30,7 +29,8 @@
     59518,
     59411,
     59699,
-    59602
+    59602,
+    60262
    ]
   },
   {
@@ -39,14 +39,13 @@
    "ok": false,
    "cached": false,
    "used_url": null,
-   "error": "www.饭太硬.com/tv: ConnectionError; www.饭太硬.net/tv: 返回 HTML 页（挑战页或失效页, 12042B）; www.饭太硬.xyz/tv: ConnectionError; fty.xxooo.cf/tv: ConnectionError; fty.888484.xyz/tv: 返回 HTML 页（挑战页或失效页, 12042B）; fty.333232.xyz/tv: 返回 HTML 页（挑战页或失效页, 12042B）",
+   "error": "www.饭太硬.com/tv: ConnectionError; www.饭太硬.net/tv: 返回 HTML 页（挑战页或失效页, 12042B）; www.饭太硬.xyz/tv: ConnectionError; fty.xxooo.cf/tv: ConnectionError; fty.888484.xyz/tv: 返回 HTML 页（挑战页或失效页, 12042B）; fty.333232.xyz/tv: JSON 解析失败: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)（首部: '����\\x00\\x10JFIF\\x00\\x01\\x01\\x00\\x00\\x01\\x00\\x01\\x00\\x00��\\x00�\\x00\\x06\\x06\\x06\\x06\\x06\\x06\\x06\\x07\\x07\\x06\\t\\n\\t\\n\\t\\r\\x0c\\x0b\\x0b\\x0c\\r\\x14\\x0e\\x0f\\x0e\\x0f\\x0e\\x14\\x1f\\x13\\x16\\x13\\x13\\x16\\x13'）",
    "sites": 0,
-   "latency_ms": 65612,
+   "latency_ms": 68355,
    "consecutive_failures": 60,
    "last_success_at": null,
-   "last_failure_at": "2026-10-18 01:43:25",
+   "last_failure_at": "2026-10-18 15:39:21",
    "latency_trend_ms": [
-    66766,
     67896,
     68994,
     66157,
@@ -55,7 +54,8 @@
     69412,
     68007,
     62763,
-    65612
+    65612,
+    68355
    ]
   },
   {
@@ -66,12 +66,11 @@
    "used_url": "https://d.kstore.dev/download/9280/wex.json",
    "error": null,
    "sites": 63,
-   "latency_ms": 337,
+   "latency_ms": 265,
    "consecutive_failures": 0,
-   "last_success_at": "2026-10-18 01:43:25",
+   "last_success_at": "2026-10-18 15:39:21",
    "last_failure_at": null,
    "latency_trend_ms": [
-    188,
     345,
     197,
     1281,
@@ -80,7 +79,8 @@
     194,
     328,
     351,
-    337
+    337,
+    265
    ]
   },
   {
@@ -91,12 +91,11 @@
    "used_url": null,
    "error": "tv.nxog.top/m/: HTTP 403; 欧歌.v.nxog.top/m/: SSLError; 欧歌zp8.v.nxog.top/m/: HTTP 403",
    "sites": 12,
-   "latency_ms": 13223,
+   "latency_ms": 13009,
    "consecutive_failures": 60,
    "last_success_at": null,
-   "last_failure_at": "2026-10-18 01:43:25",
+   "last_failure_at": "2026-10-18 15:39:21",
    "latency_trend_ms": [
-    12924,
     13411,
     13158,
     13164,
@@ -105,7 +104,8 @@
     12915,
     13173,
     13106,
-    13223
+    13223,
+    13009
    ]
   },
   {
@@ -114,14 +114,13 @@
    "ok": false,
    "cached": false,
    "used_url": null,
-   "error": "我不是.摸鱼儿.top: 返回 HTML 页（挑战页或失效页, 102855B）; 我不是.摸鱼儿.com: 返回 HTML 页（挑战页或失效页, 6990B）; 我不是.摸鱼儿.xyz: ConnectionError; 清清.摸鱼儿.top: ConnectionError",
+   "error": "我不是.摸鱼儿.top: 返回 HTML 页（挑战页或失效页, 102845B）; 我不是.摸鱼儿.com: 返回 HTML 页（挑战页或失效页, 6990B）; 我不是.摸鱼儿.xyz: ConnectionError; 清清.摸鱼儿.top: ConnectionError",
    "sites": 0,
-   "latency_ms": 26178,
+   "latency_ms": 25779,
    "consecutive_failures": 60,
    "last_success_at": null,
-   "last_failure_at": "2026-10-18 01:43:25",
+   "last_failure_at": "2026-10-18 15:39:21",
    "latency_trend_ms": [
-    25636,
     26245,
     29920,
     25813,
@@ -130,7 +129,8 @@
     25920,
     25542,
     25664,
-    26178
+    26178,
+    25779
    ]
   },
   {
@@ -141,12 +141,11 @@
    "used_url": null,
    "error": "ok321.top/ok: ConnectionError; ok321.top/tv: ConnectionError",
    "sites": 0,
-   "latency_ms": 24931,
+   "latency_ms": 24846,
    "consecutive_failures": 60,
    "last_success_at": null,
-   "last_failure_at": "2026-10-18 01:43:25",
+   "last_failure_at": "2026-10-18 15:39:21",
    "latency_trend_ms": [
-    24641,
     24756,
     24673,
     24587,
@@ -155,7 +154,8 @@
     24399,
     24761,
     24714,
-    24931
+    24931,
+    24846
    ]
   },
   {
@@ -166,12 +166,11 @@
    "used_url": null,
    "error": "www.mpanso.com/小米/DEMO.json: HTTP 404; www.mpanso.com/小米/DEMO.json: HTTP 404; miqk.cc/小米/DEMO.json: ConnectionError",
    "sites": 0,
-   "latency_ms": 40082,
+   "latency_ms": 39663,
    "consecutive_failures": 60,
    "last_success_at": null,
-   "last_failure_at": "2026-10-18 01:43:25",
+   "last_failure_at": "2026-10-18 15:39:21",
    "latency_trend_ms": [
-    42305,
     40561,
     40087,
     40773,
@@ -180,7 +179,8 @@
     42265,
     42793,
     39159,
-    40082
+    40082,
+    39663
    ]
   },
   {
@@ -191,12 +191,11 @@
    "used_url": null,
    "error": "cdn.qiaoji8.com/tvbox.json: ConnectionError",
    "sites": 0,
-   "latency_ms": 12560,
+   "latency_ms": 12344,
    "consecutive_failures": 60,
    "last_success_at": null,
-   "last_failure_at": "2026-10-18 01:43:25",
+   "last_failure_at": "2026-10-18 15:39:21",
    "latency_trend_ms": [
-    12148,
     12589,
     12328,
     12330,
@@ -205,7 +204,8 @@
     12384,
     12485,
     12354,
-    12560
+    12560,
+    12344
    ]
   },
   {
@@ -216,12 +216,11 @@
    "used_url": "http://xhztv.top/4k.json",
    "error": null,
    "sites": 53,
-   "latency_ms": 186,
+   "latency_ms": 158,
    "consecutive_failures": 0,
-   "last_success_at": "2026-10-18 01:43:25",
+   "last_success_at": "2026-10-18 15:39:21",
    "last_failure_at": null,
    "latency_trend_ms": [
-    79,
     197,
     68,
     143,
@@ -230,7 +229,8 @@
     110,
     153,
     150,
-    186
+    186,
+    158
    ]
   },
   {
@@ -241,12 +241,11 @@
    "used_url": null,
    "error": "9877.kstore.space/one.json: HTTP 404; 9877.kstore.space/AnotherD/api.json: HTTP 404",
    "sites": 0,
-   "latency_ms": 680,
+   "latency_ms": 462,
    "consecutive_failures": 60,
    "last_success_at": null,
-   "last_failure_at": "2026-10-18 01:43:25",
+   "last_failure_at": "2026-10-18 15:39:21",
    "latency_trend_ms": [
-    474,
     844,
     439,
     530,
@@ -255,7 +254,8 @@
     420,
     711,
     668,
-    680
+    680,
+    462
    ]
   },
   {
@@ -266,12 +266,11 @@
    "used_url": "https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/config.json",
    "error": null,
    "sites": 3,
-   "latency_ms": 269,
+   "latency_ms": 124,
    "consecutive_failures": 0,
-   "last_success_at": "2026-10-18 01:43:25",
+   "last_success_at": "2026-10-18 15:39:21",
    "last_failure_at": null,
    "latency_trend_ms": [
-    124,
     134,
     132,
     123,
@@ -280,7 +279,8 @@
     126,
     89,
     29,
-    269
+    269,
+    124
    ]
   },
   {
@@ -291,12 +291,11 @@
    "used_url": "https://raw.githubusercontent.com/qist/tvbox/master/367.json",
    "error": null,
    "sites": 106,
-   "latency_ms": 319,
+   "latency_ms": 89,
    "consecutive_failures": 0,
-   "last_success_at": "2026-10-18 01:43:25",
+   "last_success_at": "2026-10-18 15:39:21",
    "last_failure_at": null,
    "latency_trend_ms": [
-    143,
     99,
     221,
     67,
@@ -305,7 +304,8 @@
     97,
     48,
     53,
-    319
+    319,
+    89
    ]
   }
  ]
