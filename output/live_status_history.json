@@ -1,27 +1,6 @@
 {
  "runs": [
   {
-   "ts": "2026-09-20 01:47:48",
-   "sources": {
-    "fmml": {
-     "ok": true,
-     "urls": 82
-    },
-    "iptv-org-cn": {
-     "ok": true,
-     "urls": 144
-    },
-    "iptv-org-zho": {
-     "ok": true,
-     "urls": 75
-    },
-    "iptv-api": {
-     "ok": true,
-     "urls": 1501
-    }
-   }
-  },
-  {
    "ts": "2026-09-20 16:17:58",
    "sources": {
     "fmml": {
@@ -1241,6 +1220,27 @@
   },
   {
    "ts": "2026-10-19 16:30:09",
+   "sources": {
+    "fmml": {
+     "ok": true,
+     "urls": 82
+    },
+    "iptv-org-cn": {
+     "ok": true,
+     "urls": 147
+    },
+    "iptv-org-zho": {
+     "ok": true,
+     "urls": 74
+    },
+    "iptv-api": {
+     "ok": true,
+     "urls": 1501
+    }
+   }
+  },
+  {
+   "ts": "2026-10-20 04:30:13",
    "sources": {
     "fmml": {
      "ok": true,
