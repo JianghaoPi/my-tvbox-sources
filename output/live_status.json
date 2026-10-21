@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-21 16:20:16",
+ "updated_at": "2026-10-22 03:15:09",
  "repo": "JianghaoPi/my-tvbox-sources",
  "epg": "https://live.fanmingming.cn/e.xml",
  "summary": {
@@ -7,10 +7,10 @@
   "upstream_ok": 4,
   "channels_raw": 786,
   "urls_raw": 1808,
-  "channels_out": 392,
-  "urls_out": 720,
+  "channels_out": 396,
+  "urls_out": 725,
   "groups": 56,
-  "probe_seconds": 478
+  "probe_seconds": 485
  },
  "sources": [
   {
@@ -21,7 +21,7 @@
    "error": "",
    "entries": 82,
    "urls": 82,
-   "last_success_at": "2026-10-21 16:20:16",
+   "last_success_at": "2026-10-22 03:15:09",
    "last_failure_at": null,
    "consecutive_failures": 0,
    "urls_trend": [
@@ -45,7 +45,7 @@
    "error": "",
    "entries": 149,
    "urls": 149,
-   "last_success_at": "2026-10-21 16:20:16",
+   "last_success_at": "2026-10-22 03:15:09",
    "last_failure_at": null,
    "consecutive_failures": 0,
    "urls_trend": [
@@ -57,7 +57,7 @@
     147,
     147,
     147,
-    147,
+    149,
     149
    ]
   },
@@ -69,19 +69,19 @@
    "error": "",
    "entries": 218,
    "urls": 77,
-   "last_success_at": "2026-10-21 16:20:16",
+   "last_success_at": "2026-10-22 03:15:09",
    "last_failure_at": null,
    "consecutive_failures": 0,
    "urls_trend": [
     75,
     75,
-    75,
     74,
     74,
     74,
     74,
     74,
     74,
+    77,
     77
    ]
   },
@@ -93,7 +93,7 @@
    "error": "",
    "entries": 1616,
    "urls": 1500,
-   "last_success_at": "2026-10-21 16:20:16",
+   "last_success_at": "2026-10-22 03:15:09",
    "last_failure_at": null,
    "consecutive_failures": 0,
    "urls_trend": [
@@ -105,7 +105,7 @@
     1501,
     1501,
     1501,
-    1501,
+    1500,
     1500
    ]
   }
