@@ -1,16 +1,16 @@
 {
- "updated_at": "2026-10-21 03:03:41",
+ "updated_at": "2026-10-21 16:20:16",
  "repo": "JianghaoPi/my-tvbox-sources",
  "epg": "https://live.fanmingming.cn/e.xml",
  "summary": {
   "upstream_total": 4,
   "upstream_ok": 4,
-  "channels_raw": 781,
-  "urls_raw": 1804,
-  "channels_out": 390,
-  "urls_out": 718,
+  "channels_raw": 786,
+  "urls_raw": 1808,
+  "channels_out": 392,
+  "urls_out": 720,
   "groups": 56,
-  "probe_seconds": 544
+  "probe_seconds": 478
  },
  "sources": [
   {
@@ -21,7 +21,7 @@
    "error": "",
    "entries": 82,
    "urls": 82,
-   "last_success_at": "2026-10-21 03:03:41",
+   "last_success_at": "2026-10-21 16:20:16",
    "last_failure_at": null,
    "consecutive_failures": 0,
    "urls_trend": [
@@ -43,9 +43,9 @@
    "ok": true,
    "used_url": "https://iptv-org.github.io/iptv/countries/cn.m3u",
    "error": "",
-   "entries": 147,
-   "urls": 147,
-   "last_success_at": "2026-10-21 03:03:41",
+   "entries": 149,
+   "urls": 149,
+   "last_success_at": "2026-10-21 16:20:16",
    "last_failure_at": null,
    "consecutive_failures": 0,
    "urls_trend": [
@@ -58,7 +58,7 @@
     147,
     147,
     147,
-    147
+    149
    ]
   },
   {
@@ -67,22 +67,22 @@
    "ok": true,
    "used_url": "https://iptv-org.github.io/iptv/languages/zho.m3u",
    "error": "",
-   "entries": 214,
-   "urls": 74,
-   "last_success_at": "2026-10-21 03:03:41",
+   "entries": 218,
+   "urls": 77,
+   "last_success_at": "2026-10-21 16:20:16",
    "last_failure_at": null,
    "consecutive_failures": 0,
    "urls_trend": [
     75,
     75,
     75,
-    75,
     74,
     74,
     74,
     74,
     74,
-    74
+    74,
+    77
    ]
   },
   {
@@ -92,8 +92,8 @@
    "used_url": "https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u",
    "error": "",
    "entries": 1616,
-   "urls": 1501,
-   "last_success_at": "2026-10-21 03:03:41",
+   "urls": 1500,
+   "last_success_at": "2026-10-21 16:20:16",
    "last_failure_at": null,
    "consecutive_failures": 0,
    "urls_trend": [
@@ -106,7 +106,7 @@
     1501,
     1501,
     1501,
-    1501
+    1500
    ]
   }
  ]
