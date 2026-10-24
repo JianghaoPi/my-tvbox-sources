@@ -53,7 +53,7 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 当前源状态
 
 <!-- STATUS-START -->
-> 自动更新于 2026-10-24 15:50（5/12 源可用）。 手动触发：Actions → update → Run workflow。
+> 自动更新于 2026-10-25 01:47（5/12 源可用）。 手动触发：Actions → update → Run workflow。
 
 | 源 | 状态 | 生效地址 | 站点 | 错误 |
 |---|---|---|---|---|
@@ -74,7 +74,7 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 直播源状态
 
 <!-- LIVE-START -->
-> 直播源自动更新于 2026-10-24 15:58：上游 4/4 可用，产出 **390** 频道 / **700** 条有效地址（原始 1808，测速剔除失效 1108）。 手动触发：Actions → update → Run workflow。
+> 直播源自动更新于 2026-10-25 01:55：上游 4/4 可用，产出 **391** 频道 / **716** 条有效地址（原始 1808，测速剔除失效 1092）。 手动触发：Actions → update → Run workflow。
 
 | 直播源 | 状态 | 生效地址 | 素材条目 | 贡献地址 | 错误 |
 |---|---|---|---|---|---|
