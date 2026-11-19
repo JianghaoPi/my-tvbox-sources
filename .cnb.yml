@@ -14,6 +14,9 @@ main:
         - name: aggregate
           script:
             - 'pip install -r requirements.txt'
+            - 'python scripts/selftest_sources.py'
+            - 'python scripts/selftest_status.py'
+            - 'python scripts/selftest_live.py'
             - 'python scripts/update.py'
         - name: live sources
           script:

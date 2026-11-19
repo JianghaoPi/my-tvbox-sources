@@ -9,12 +9,14 @@ update_shield 相对时间、README 表格与徽章回写、历史窗口文件�
 用法：python scripts/selftest_status.py
 """
 import json
+import os
 import re
 import sys
 import tempfile
 import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import update  # noqa: E402
@@ -128,4 +130,6 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    # CI 的真实仓库/平台变量不得改变测试用订阅与徽章地址。
+    with patch.dict(os.environ, {"GITHUB_REPOSITORY": "test/repo", "CNB": "false"}):
+        sys.exit(main())

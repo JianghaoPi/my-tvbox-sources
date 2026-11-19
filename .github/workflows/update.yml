@@ -29,6 +29,12 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
 
+      - name: Test source handling
+        run: |
+          python scripts/selftest_sources.py
+          python scripts/selftest_status.py
+          python scripts/selftest_live.py
+
       - name: Aggregate sources
         run: python scripts/update.py
 

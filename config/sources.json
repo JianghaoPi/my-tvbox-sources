@@ -1,28 +1,26 @@
 {
-  "description": "TVBox 上游配置源列表：主地址在前、备用在后，依次尝试。来源：照抄 Lightconer/tvbox-ysc-config 模板清单 + 自建 GitHub 源。维护 SOP：每 1-2 周人工检查一次存活与冗余度（见 README）。site_block_keywords：聚合时按名称剔除的点播站点关键词（上游常塞虎牙/斗鱼等网络直播站进点播列表）。",
+  "description": "TVBox 上游配置源。urls 按顺序回退，固定播放器 UA；支持 JSON、图片 Base64 与响应自带密钥的 2423 AES-CBC。源通过配置及顶层 JAR 文件头检查才算在线，不代表逐站可播放。enabled=false 的源保留记录且不抓取。2026-11-19 调研见 docs/source-review-2026-11-19.md。",
   "repo": "JianghaoPi/my-tvbox-sources",
-  "site_block_keywords": ["虎牙", "斗鱼"],
+  "site_block_keywords": [
+    "虎牙",
+    "斗鱼"
+  ],
   "sources": [
     {
       "id": "feimao",
       "name": "肥猫",
       "urls": [
-        "http://肥猫.com/tv",
-        "http://肥猫.net/tv",
-        "http://hello.肥猫.com/",
-        "https://6296.kstore.vip/facat.json"
+        "http://肥猫.net/",
+        "http://hello.肥猫.net/"
       ]
     },
     {
       "id": "fantaiying",
       "name": "饭太硬",
       "urls": [
-        "http://www.饭太硬.com/tv",
+        "https://www.饭太硬.cc/tv",
         "http://www.饭太硬.net/tv",
-        "http://www.饭太硬.xyz/tv",
-        "http://fty.xxooo.cf/tv",
-        "http://fty.888484.xyz/tv",
-        "http://fty.333232.xyz/tv"
+        "https://raw.githubusercontent.com/qist/tvbox/master/fty.json"
       ]
     },
     {
@@ -42,16 +40,18 @@
         "http://tv.nxog.top/m/",
         "https://欧歌.v.nxog.top/m/",
         "http://欧歌zp8.v.nxog.top/m/"
-      ]
+      ],
+      "enabled": false,
+      "disabled_reason": "2026-11-19：旧接口 403，新候选接口 404 或 TLS 主机名不匹配；未找到同时通过配置与依赖检查的替代入口，暂时停用。"
     },
     {
       "id": "moyu",
       "name": "摸鱼",
       "urls": [
-        "http://我不是.摸鱼儿.top",
-        "http://我不是.摸鱼儿.com",
-        "http://我不是.摸鱼儿.xyz",
-        "http://清清.摸鱼儿.top"
+        "http://我不是.摸鱼儿.cc/",
+        "http://我不是.摸鱼儿.top/",
+        "http://www.y456y.com/",
+        "https://6800.kstore.vip/fish.json"
       ]
     },
     {
@@ -60,43 +60,46 @@
       "urls": [
         "http://ok321.top/ok",
         "http://ok321.top/tv"
-      ]
+      ],
+      "enabled": false,
+      "disabled_reason": "2026-11-19：ok321.top / ok213.top 连接失败，公开 jihulab 备用接口 401；暂时停用。"
     },
     {
       "id": "xiaomi",
       "name": "小米",
       "urls": [
-        "http://www.mpanso.com/小米/DEMO.json",
-        "https://www.mpanso.com/小米/DEMO.json",
-        "http://miqk.cc/小米/DEMO.json"
+        "https://raw.githubusercontent.com/ggrrttyyiii/CatVodSpider/main/json/demo.json",
+        "https://cdn.jsdelivr.net/gh/ggrrttyyiii/CatVodSpider@main/json/demo.json"
       ]
     },
     {
       "id": "qiaoji",
-      "name": "巧记",
+      "name": "巧技（原巧记）",
       "urls": [
         "http://cdn.qiaoji8.com/tvbox.json"
-      ]
+      ],
+      "enabled": false,
+      "disabled_reason": "2026-11-19：cdn.qiaoji8.com 连接失败，pandown.pro 的 HTTP/HTTPS 备用接口均超时；暂时停用。"
     },
     {
       "id": "4k",
-      "name": "4K小盒子",
+      "name": "小盒子（单仓）",
       "urls": [
-        "http://xhztv.top/4k.json",
-        "http://xhztv.top/xhz"
+        "http://xhztv.top/xhz/",
+        "http://xhztv.top/4k.json"
       ]
     },
     {
       "id": "xiaosa",
       "name": "潇洒",
       "urls": [
-        "https://9877.kstore.space/one.json",
-        "https://9877.kstore.space/AnotherD/api.json"
+        "https://9877.kstore.space/sun.json",
+        "https://raw.githubusercontent.com/qist/tvbox/master/xiaosa/api.json"
       ]
     },
     {
       "id": "fongmi",
-      "name": "FongMi(蜂蜜)",
+      "name": "FongMi（本地/WebDAV示例）",
       "urls": [
         "https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/config.json",
         "https://cdn.jsdelivr.net/gh/FongMi/CatVodSpider@main/json/config.json"
@@ -104,11 +107,49 @@
     },
     {
       "id": "qist",
-      "name": "qist合集",
+      "name": "qist家庭合集",
       "urls": [
-        "https://raw.githubusercontent.com/qist/tvbox/master/367.json",
-        "https://cdn.jsdelivr.net/gh/qist/tvbox@master/367.json"
+        "https://raw.githubusercontent.com/qist/tvbox/master/jsm.json",
+        "https://cdn.jsdelivr.net/gh/qist/tvbox@master/jsm.json"
+      ]
+    },
+    {
+      "id": "nanfeng",
+      "name": "南风",
+      "urls": [
+        "https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json",
+        "https://cdn.jsdelivr.net/gh/yoursmile66/TVBox@main/XC.json"
+      ]
+    },
+    {
+      "id": "xyq",
+      "name": "香雅情",
+      "urls": [
+        "https://raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQTVBox.json",
+        "https://cdn.jsdelivr.net/gh/xyq254245/xyqonlinerule@main/XYQTVBox.json"
+      ]
+    },
+    {
+      "id": "liucn",
+      "name": "老刘备",
+      "urls": [
+        "https://raw.liucn.cc/box/m.json",
+        "https://raw.githubusercontent.com/liu673cn/box/main/m.json"
       ]
     }
+  ],
+  "aggregate_prefer": [
+    "qist",
+    "fantaiying",
+    "wangerxiao",
+    "xiaosa",
+    "nanfeng",
+    "liucn",
+    "xyq",
+    "feimao",
+    "moyu",
+    "xiaomi",
+    "4k",
+    "fongmi"
   ]
 }

@@ -1,5 +1,5 @@
 {
- "spider": "../jar/custom_spider.jar",
+ "spider": "https://raw.githubusercontent.com/FongMi/CatVodSpider/main/jar/custom_spider.jar",
  "lives": [
   {
    "name": "MQiTV",
@@ -32,7 +32,7 @@
    "api": "csp_Market",
    "searchable": 0,
    "changeable": 0,
-   "ext": "./market.json"
+   "ext": "https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/market.json"
   },
   {
    "key": "push_agent",

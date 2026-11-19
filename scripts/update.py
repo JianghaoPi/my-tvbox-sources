@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""TVBox 源仓库自动聚合管线（S1）。
+"""TVBox 配置维护管线。
 
 流程：读 config/sources.json → 逐源抓取（多地址回退 + 宽容解析 + 智能重试）
-     → 缓存兜底 → 合并去重 → 写 output/ 五类产物 → 回写 README 状态表。
+     → 格式解码 / 相对路径补全 / JAR 检查 → 缓存兜底 → 完整配置回退 + 多仓订阅。
 
 设计要点（见《桌面端设计方案.md》6.3.1）：
   1. 多地址回退：每源 urls 依序尝试，首个成功即用（对抗上游域名失效）
   2. 中文域名 punycode：饭太硬.com → xn--xxx.com，否则 DNS 解析失败
-  3. 宽容 JSON：去 BOM / 剔注释 / strict=False / 截取首尾大括号
+  3. 配置格式：宽容 JSON / 图片 Base64 / 响应自带密钥的 2423 AES-CBC
   4. 智能重试：瞬态错误（超时/连接/5xx/空响应）退避重试；确定性失败（4xx/非JSON/结构不对）直接跳下一个地址
   5. 缓存兜底：本次全挂 → 沿用上次成功的 output/<id>.json
   6. 产物多样性：aggregate.json（单仓聚合）/ subscribe.json（多仓订阅）/ <id>.json / status.json / shield.json
@@ -16,20 +16,24 @@
   8. 防死循环：脚本只写 output/ 与 README.md（触发路径是 config/ scripts/，互不重叠）
   9. 内容治理：点播站点黑名单（config/sources.json 的 site_block_keywords，默认虎牙/斗鱼）
      剔除上游塞入的网络直播站；上游自带的无效 lives（相对路径/空地址/Xtream API）不进产物
+ 10. aggregate 选择一套完整上游（在线优先、再按 aggregate_prefer）；不混用不同 JAR 的站点
 
 本地调试：python3 scripts/update.py
 """
+import base64
+import copy
 import json
 import os
 import re
 import sys
 import time
-from collections import Counter
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
-from urllib.parse import urlsplit, urlunsplit, quote
+from urllib.parse import urljoin, urlsplit, urlunsplit, quote
 
 import requests
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import unpad
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_FILE = ROOT / "config" / "sources.json"
@@ -44,6 +48,7 @@ HISTORY_MAX_RUNS = 60       # 历史保留的运行次数（每日 2 次 ≈ 最
 HISTORY_TREND = 10          # 延迟趋势取最近 N 次
 CST = timezone(timedelta(hours=8))
 DEFAULT_SITE_BLOCK = ("虎牙", "斗鱼")  # 站点黑名单默认关键词：上游常塞虎牙/斗鱼网络直播站进点播列表
+CONFIG_UA = "okhttp/4.12.0"  # 配置接口常按播放器 UA 分流；浏览器 UA 会返回说明/挑战页
 
 UA_POOL = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
@@ -52,10 +57,6 @@ UA_POOL = [
     "MTV-TB/2.0 (Android TV)",
     "com.catvod.toyscat/3.8",
 ]
-
-import random
-random.seed()  # 各次运行 UA 分布不同，避免被上游按 UA 规律识别
-
 
 def log(msg: str):
     print(f"[{datetime.now(CST):%H:%M:%S}] {msg}", flush=True)
@@ -129,6 +130,88 @@ def decode_body(r: requests.Response) -> str:
     return raw.decode(r.encoding or "utf-8", errors="replace")
 
 
+def decode_config(raw: bytes):
+    """按播放器协议解析 JSON、图片后附 Base64、2423 AES-CBC 配置。
+
+    AES 密钥与 IV 均来自响应自身的公开封装；不执行上游脚本或 JAR。
+    协议参考 FongMi/TV 的 catvod/utils/Decoder.java。
+    """
+    for _ in range(3):
+        response = requests.Response()
+        response._content = raw
+        text = decode_body(response).lstrip("\ufeff\r\n\t ")
+        if looks_like_html(text):
+            raise ValueError(f"返回 HTML 页（说明页/挑战页/失效页, {len(raw)}B）")
+        try:
+            return lenient_json(text)
+        except ValueError:
+            pass
+        if text.startswith("2423"):
+            try:
+                packed = bytes.fromhex(re.sub(r"\s+", "", text))
+                key, encrypted = packed[2:].split(b"#$", 1)
+                if not 0 < len(key) <= 16 or len(encrypted) <= 13:
+                    raise ValueError("无效的密钥或载荷长度")
+                iv = encrypted[-13:].lower().ljust(16, b"0")
+                raw = unpad(AES.new(key.lower().ljust(16, b"0"), AES.MODE_CBC, iv)
+                            .decrypt(encrypted[:-13]), AES.block_size)
+            except (ValueError, TypeError) as exc:
+                raise ValueError("2423 AES-CBC 配置解码失败") from exc
+            continue
+        match = re.search(rb"[A-Za-z0-9]{8}\*\*", raw)
+        if match:
+            try:
+                raw = base64.b64decode(re.sub(rb"\s+", b"", raw[match.end():]), validate=True)
+            except ValueError as exc:
+                raise ValueError("图片/Base64 配置解码失败") from exc
+            continue
+        raise ValueError("配置不是有效 JSON 或支持的图片/Base64/AES-CBC 格式")
+    raise ValueError("配置封装层数过多")
+
+
+def normalize_config(obj: dict, base_url: str) -> dict:
+    """快照移到本仓库前，按重定向后的上游地址补全资源相对路径。"""
+    url_fields = {"spider", "jar", "api", "ext", "url", "wallpaper", "logo", "icon"}
+
+    def visit(value, field=""):
+        if isinstance(value, dict):
+            return {k: visit(v, k) for k, v in value.items()}
+        if isinstance(value, list):
+            return [visit(v, field) for v in value]
+        if isinstance(value, str) and (value.startswith(("./", "../", "//")) or
+                                      field in url_fields and value.startswith(("/", "?"))):
+            return urljoin(base_url, value)
+        return value
+
+    return visit(obj)
+
+
+def check_spider(session: requests.Session, obj: dict, headers=None):
+    """只读 JAR 文件头，拦截配置 200 但爬虫已 403/404/返回 HTML 的情况。"""
+    spider = obj.get("spider")
+    if not isinstance(spider, str) or not spider:
+        return None
+    url = spider.split(";", 1)[0]
+    if not url.startswith(("http://", "https://")):
+        return "爬虫依赖不是可读取的 HTTP(S) 地址"
+    try:
+        with session.get(punycode_url(url), timeout=(10, 15), stream=True,
+                         headers={"User-Agent": CONFIG_UA, **(headers or {})}) as response:
+            if response.status_code >= 400:
+                return f"爬虫依赖 HTTP {response.status_code}"
+            # 压缩/分块响应的一次 raw.read(4) 可能不足 4 字节，累计解码后的数据再判断。
+            prefix = b""
+            for chunk in response.iter_content(chunk_size=512):
+                prefix += chunk
+                if len(prefix) >= 4:
+                    break
+            if not prefix.startswith(b"PK\x03\x04"):
+                return "爬虫依赖未返回 ZIP/JAR 文件头"
+    except requests.RequestException as exc:
+        return f"爬虫依赖 {type(exc).__name__}"
+    return None
+
+
 # ---------------------------------------------------------------- 状态历史（S3.1）
 
 def history_load(path: Path) -> dict:
@@ -189,40 +272,42 @@ def relative_hours(ts) -> str:
 
 # ---------------------------------------------------------------- 抓取
 
-def fetch_single(session: requests.Session, url: str):
+def fetch_single(session: requests.Session, url: str, headers=None):
     """抓取单个地址。返回 (obj 或 None, 错误说明 或 None)。"""
     pu = punycode_url(url)
     last_err = "unknown"
     for attempt in range(TRANSIENT_RETRIES + 1):
         try:
             r = session.get(pu, timeout=FETCH_TIMEOUT, allow_redirects=True,
-                            headers={"User-Agent": random.choice(UA_POOL)})
+                            headers={"User-Agent": CONFIG_UA, **(headers or {})})
+        except requests.exceptions.SSLError:
+            return None, "SSLError（TLS 证书校验失败）"
         except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as e:
             last_err = f"{type(e).__name__}"
-            time.sleep(2 * (attempt + 1))
+            if attempt < TRANSIENT_RETRIES:
+                time.sleep(2 * (attempt + 1))
             continue
         except Exception as e:  # 其它异常按确定性处理，重试无意义
             return None, f"{type(e).__name__}: {e}"
         if r.status_code >= 500:  # 服务端错误 → 瞬态，退避重试
             last_err = f"HTTP {r.status_code}"
-            time.sleep(2 * (attempt + 1))
+            if attempt < TRANSIENT_RETRIES:
+                time.sleep(2 * (attempt + 1))
             continue
         if r.status_code >= 400:  # 4xx → 确定性失败，直接跳下一个地址
             return None, f"HTTP {r.status_code}"
-        text = decode_body(r)
-        if not text.strip():
+        if not r.content.strip():
             last_err = "空响应"
-            time.sleep(2 * (attempt + 1))
+            if attempt < TRANSIENT_RETRIES:
+                time.sleep(2 * (attempt + 1))
             continue
-        if looks_like_html(text):  # 挑战页/防爬页/域名停放页，重试无意义
-            return None, f"返回 HTML 页（挑战页或失效页, {len(text)}B）"
         try:
-            obj = lenient_json(text)
+            obj = decode_config(r.content)
         except ValueError as e:
-            return None, str(e) + f"（首部: {text[:60]!r}）"
+            return None, str(e)
         if not is_tvbox_config(obj):
             return None, "结构不符：缺非空 sites/urls"
-        return obj, None
+        return normalize_config(obj, r.url), None
     return None, last_err
 
 
@@ -230,35 +315,25 @@ def fetch_source(session: requests.Session, source: dict):
     """逐地址回退抓取一个上游源。返回 (used_url, obj, error_summary)。"""
     errors = []
     for url in source.get("urls", []):
-        obj, err = fetch_single(session, url)
+        obj, err = fetch_single(session, url, source.get("headers"))
         if obj is not None:
-            return url, obj, None
+            err = check_spider(session, obj, source.get("headers"))
+            if not err:
+                return url, obj, None
         errors.append(f"{url.split('://')[-1][:50]}: {err}")
         log(f"    × {errors[-1]}")
     return None, None, "; ".join(errors)
 
 
-def expand_subscription(session: requests.Session, obj: dict):
+def expand_subscription(session: requests.Session, obj: dict, headers=None):
     """上游为多仓订阅格式（{"urls":[{name,url}]}）时，展开抓取其子源并返回站点素材。"""
     subs = [s for s in obj.get("urls", []) if isinstance(s, dict) and s.get("url")]
     materials = []
     for sub in subs[:MAX_SUB_SOURCES]:
-        sub_obj, err = None, None
-        sub_url = punycode_url(sub["url"])
-        # 子源失败只记一次，不回退重试整套（子源通常只有一个地址）
-        try:
-            r = session.get(sub_url, timeout=FETCH_TIMEOUT, allow_redirects=True,
-                            headers={"User-Agent": random.choice(UA_POOL)})
-            body = decode_body(r) if r.status_code < 400 else ""
-            if r.status_code < 400 and not looks_like_html(body):
-                parsed = lenient_json(body)
-                if isinstance(parsed, dict) and isinstance(parsed.get("sites"), list):
-                    sub_obj = parsed
-            elif r.status_code >= 400:
-                err = f"HTTP {r.status_code}"
-        except Exception as e:  # noqa: BLE001
-            err = type(e).__name__
-        if sub_obj:
+        sub_obj, err = fetch_single(session, sub["url"], headers)
+        if sub_obj and sub_obj.get("sites"):
+            err = check_spider(session, sub_obj, headers)
+        if sub_obj and sub_obj.get("sites") and not err:
             materials.append(sub_obj)
         else:
             log(f"    · 子源 {sub.get('name','?')} 跳过（{err or '格式不符'}）")
@@ -285,66 +360,48 @@ def valid_live_entry(x: dict) -> bool:
 
 
 def merge_configs(configs: list, block_keywords=()):
-    """把多份配置合并为单仓聚合：sites 按 (key,api) 去重、key 冲突加后缀、
-    名称命中黑名单关键词的站点剔除；lives/parses 按 name+url 去重（lives 另做
-    结构过滤，无效条目不进产物）；flags 并集；spider 取出现最多的。"""
-    seen_ident, seen_key = set(), Counter()
+    """使用首个完整配置，保留其 JAR/rules/ads 等上下文；其余源由多仓切换。
+
+    csp_* 类名可能相同但来自不同 JAR，不能把站点混合后共用一个 JAR。
+    """
+    primary = next((cfg for cfg in configs if cfg.get("sites")), {})
+    seen_ident, seen_key = set(), set()
     merged_sites, blocked_sites = [], 0
-    for cfg in configs:
-        for site in cfg.get("sites", []):
-            if not isinstance(site, dict):
-                continue
-            if any(kw and kw in str(site.get("name", "")) for kw in block_keywords):
-                blocked_sites += 1
-                continue
-            ident = site_identity(site)
-            if ident in seen_ident:
-                continue
-            seen_ident.add(ident)
-            key = str(site.get("key", f"site_{len(merged_sites)}"))
-            if seen_key[key]:  # key 冲突 → 加数字后缀（如 抖音_2）
-                n = seen_key[key] + 1
-                while f"{key}_{n}" in seen_key:
-                    n += 1
-                site = {**site, "key": f"{key}_{n}"}
-                key = site["key"]
-            seen_key[key] += 1
-            merged_sites.append(site)
+    for site in primary.get("sites", []):
+        if not isinstance(site, dict):
+            continue
+        if any(kw and kw in str(site.get("name", "")) for kw in block_keywords):
+            blocked_sites += 1
+            continue
+        ident = site_identity(site)
+        if ident in seen_ident:
+            continue
+        seen_ident.add(ident)
+        site = copy.deepcopy(site)
+        key = str(site.get("key", f"site_{len(merged_sites)}"))
+        if key in seen_key:
+            n = 2
+            while f"{key}_{n}" in seen_key:
+                n += 1
+            site = {**site, "key": f"{key}_{n}"}
+            key = site["key"]
+        seen_key.add(key)
+        merged_sites.append(site)
     if blocked_sites:
         log(f"    站点黑名单剔除 {blocked_sites} 个（关键词：{'、'.join(k for k in block_keywords if k)}）")
 
-    def dedup_list(field, idfunc):
-        out, seen = [], set()
-        for cfg in configs:
-            for item in cfg.get(field, []) or []:
-                if not isinstance(item, dict):
-                    continue
-                k = idfunc(item)
-                if k in seen:
-                    continue
-                seen.add(k)
-                out.append(item)
-        return out
-
-    all_lives = dedup_list("lives", lambda x: (str(x.get("name", "")), str(x.get("url", ""))))
-    lives = [x for x in all_lives if valid_live_entry(x)]
+    all_lives = primary.get("lives") or []
+    lives = [x for x in all_lives if isinstance(x, dict) and valid_live_entry(x)]
     dropped_lives = len(all_lives) - len(lives)
     if dropped_lives:
         log(f"    直播配置剔除 {dropped_lives} 条无效项（相对路径/空地址/Xtream API）")
-    parses = dedup_list("parses", lambda x: (str(x.get("name", "")), str(x.get("url", ""))))
-    flags = sorted({f for cfg in configs for f in (cfg.get("flags") or []) if isinstance(f, str)})
-    spiders = Counter(str(cfg["spider"]) for cfg in configs if cfg.get("spider"))
-    agg = {"sites": merged_sites}
-    if spiders:
-        agg["spider"] = spiders.most_common(1)[0][0]
+    agg = copy.deepcopy(primary)
+    agg["sites"] = merged_sites
     if lives:
         agg["lives"] = lives
-    if parses:
-        agg["parses"] = parses
-    if flags:
-        agg["flags"] = flags
-    agg["ads"] = dedup_list("ads", lambda x: json.dumps(x, ensure_ascii=False, sort_keys=True))
-    return {k: v for k, v in agg.items() if v}
+    else:
+        agg.pop("lives", None)
+    return agg
 
 
 # ---------------------------------------------------------------- 产物
@@ -361,7 +418,7 @@ def write_json(path: Path, obj):
 
 def build_readme_table(status_list: list, repo: str, ok_n: int, total: int) -> str:
     lines = [
-        f"> 自动更新于 {datetime.now(CST):%Y-%m-%d %H:%M}（{ok_n}/{total} 源可用）。"
+        f"> 自动更新于 {datetime.now(CST):%Y-%m-%d %H:%M}（{ok_n}/{total} 源通过配置及 JAR 检查，未验证逐站播放）。"
         f" 手动触发：Actions → update → Run workflow。",
         "",
         "| 源 | 状态 | 生效地址 | 站点 | 错误 |",
@@ -437,21 +494,31 @@ def delivery_base(repo: str) -> str:
 
 def main() -> int:
     cfg = lenient_json(CONFIG_FILE.read_text(encoding="utf-8"))
-    sources = cfg.get("sources", [])
+    sources = [s for s in cfg.get("sources", []) if s.get("enabled", True)]
+    disabled = [{"id": s["id"], "name": s["name"], "reason": s.get("disabled_reason", "人工停用")}
+                for s in cfg.get("sources", []) if not s.get("enabled", True)]
     repo = resolve_repo(cfg)
     OUTPUT_DIR.mkdir(exist_ok=True)
     session = requests.Session()
     log(f"开始聚合：{len(sources)} 个上游源（repo={repo}）")
 
-    status_list, agg_configs = [], []
+    status_list, materials = [], []
     for source in sources:
         sid, name = source["id"], source["name"]
         log(f"▶ {name} ({sid})")
         t0 = time.time()
         used_url, obj, err = fetch_source(session, source)
         cached = False
+        site_objs = []
         if obj is not None:
-            # 本次成功 → 落盘为该源的最新缓存
+            if obj.get("sites"):
+                site_objs = [obj]
+            else:
+                site_objs = expand_subscription(session, obj, source.get("headers"))
+            if not site_objs:
+                used_url, obj, err = None, None, "订阅可读取，但没有通过检查的子源"
+        if obj is not None:
+            # 只有产生可用站点后才覆盖缓存，避免空订阅覆盖上次的配置
             write_json(OUTPUT_DIR / f"{sid}.json", obj)
         else:
             # 本次全挂 → 缓存兜底：沿用上次成功的 <id>.json
@@ -459,24 +526,17 @@ def main() -> int:
             if cache_file.exists():
                 try:
                     obj = lenient_json(cache_file.read_text(encoding="utf-8"))
-                    cached = True
-                    log(f"    📦 沿用缓存（{count_sites(obj)} 站点）")
+                    if is_tvbox_config(obj):
+                        site_objs = ([obj] if obj.get("sites") else
+                                     expand_subscription(session, obj, source.get("headers")))
+                    cached = bool(site_objs)
+                    if cached:
+                        log(f"    📦 沿用缓存（{sum(count_sites(o) for o in site_objs)} 站点）")
                 except Exception:
                     obj = None
         latency = int((time.time() - t0) * 1000)
-
-        # 多仓订阅格式 → 展开子源取素材（缓存命中的订阅格式同样展开）
-        site_objs = []
-        if obj is not None:
-            if isinstance(obj.get("urls"), list) and not obj.get("sites"):
-                log("    多仓订阅格式 → 展开子源")
-                site_objs = expand_subscription(session, obj)
-            else:
-                site_objs = [obj]
-            agg_configs.extend(site_objs)
-            total_sites = sum(count_sites(o) for o in site_objs)
-        else:
-            total_sites = 0
+        materials.extend({"id": sid, "name": name, "cached": cached, "config": o} for o in site_objs)
+        total_sites = sum(count_sites(o) for o in site_objs)
 
         status_list.append({
             "id": sid, "name": name,
@@ -504,9 +564,28 @@ def main() -> int:
 
     # ---- 产物 1+2: 聚合配置 aggregate / 多仓订阅 subscribe（ASCII 文件名，避免中文路径编码歧义）
     usable = [s for s in status_list if s["ok"] or s["cached"]]
-    if agg_configs:
+    aggregate_status = None
+    if materials:
+        preferred = {sid: i for i, sid in enumerate(cfg.get("aggregate_prefer", []))}
+        materials.sort(key=lambda item: (item["cached"], preferred.get(item["id"], len(preferred))))
+        selected = materials[0]
         block_kw = cfg.get("site_block_keywords") or list(DEFAULT_SITE_BLOCK)
-        write_json(OUTPUT_DIR / "aggregate.json", merge_configs(agg_configs, block_kw))
+        aggregate = merge_configs([selected["config"]], block_kw)
+        if (OUTPUT_DIR / "live.txt").exists():
+            # 单独刷新点播时也保留本仓库直播入口；live.py 随后会再次注入并更新 EPG。
+            live_url = f"{delivery_base(repo)}/live.txt"
+            entry = {"name": "自建直播·自动保活", "type": 0, "url": live_url}
+            live_cfg_file = ROOT / "config" / "lives.json"
+            if live_cfg_file.exists():
+                epg = lenient_json(live_cfg_file.read_text(encoding="utf-8")).get("epg")
+                if epg:
+                    entry["epg"] = epg
+            aggregate["lives"] = [entry] + [x for x in aggregate.get("lives", []) if x.get("url") != live_url]
+        write_json(OUTPUT_DIR / "aggregate.json", aggregate)
+        aggregate_status = {"source_id": selected["id"], "source_name": selected["name"],
+                            "cached": selected["cached"], "sites": count_sites(aggregate),
+                            "policy": "complete_config_fallback"}
+        log(f"    默认入口：{selected['name']}，保留其完整 JAR/规则，{count_sites(aggregate)} 站点")
     sub_urls = [{
         "name": s["name"],
         "url": f"{delivery_base(repo)}/{s['id']}.json",
@@ -520,7 +599,11 @@ def main() -> int:
         "repo": repo,
         "summary": {"total": len(status_list), "ok": ok_n,
                     "cached": sum(1 for s in status_list if s["cached"]),
+                    "disabled": len(disabled),
                     "runs_tracked": len(hist["runs"])},
+        "validation": "config_and_spider_header_only; playback_not_tested",
+        "aggregate": aggregate_status,
+        "disabled_sources": disabled,
         "sources": status_list,
     })
 
@@ -544,9 +627,10 @@ def main() -> int:
 
     log(f"完成：{ok_n} 在线 / {sum(1 for s in status_list if s['cached'])} 缓存兜底 / "
         f"{sum(1 for s in status_list if not s['ok'] and not s['cached'])} 不可用；"
-        f"聚合站点 {sum(count_sites(o) for o in agg_configs)}（去重前）")
+        f"默认入口 {aggregate_status['source_id'] if aggregate_status else '保留旧产物'}")
     if ok_n == 0 and not any(s["cached"] for s in status_list):
         log("警告：所有源均不可用且无缓存，聚合结果不可用")
+    session.close()
     return 0
 
 
