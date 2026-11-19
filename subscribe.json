@@ -1,0 +1,52 @@
+{
+ "urls": [
+  {
+   "name": "肥猫",
+   "url": "https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/feimao.json"
+  },
+  {
+   "name": "饭太硬",
+   "url": "https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/fantaiying.json"
+  },
+  {
+   "name": "王二小",
+   "url": "https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/wangerxiao.json"
+  },
+  {
+   "name": "摸鱼",
+   "url": "https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/moyu.json"
+  },
+  {
+   "name": "小米",
+   "url": "https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/xiaomi.json"
+  },
+  {
+   "name": "小盒子（单仓）",
+   "url": "https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/4k.json"
+  },
+  {
+   "name": "潇洒",
+   "url": "https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/xiaosa.json"
+  },
+  {
+   "name": "FongMi（本地/WebDAV示例）",
+   "url": "https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/fongmi.json"
+  },
+  {
+   "name": "qist家庭合集",
+   "url": "https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/qist.json"
+  },
+  {
+   "name": "南风",
+   "url": "https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/nanfeng.json"
+  },
+  {
+   "name": "香雅情",
+   "url": "https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/xyq.json"
+  },
+  {
+   "name": "老刘备",
+   "url": "https://raw.githubusercontent.com/JianghaoPi/my-tvbox-sources/main/output/liucn.json"
+  }
+ ]
+}

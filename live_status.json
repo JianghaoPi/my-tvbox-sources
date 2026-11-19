@@ -1,0 +1,113 @@
+{
+ "updated_at": "2026-11-19 19:12:39",
+ "repo": "JianghaoPi/my-tvbox-sources",
+ "epg": "https://live.fanmingming.cn/e.xml",
+ "summary": {
+  "upstream_total": 4,
+  "upstream_ok": 4,
+  "channels_raw": 788,
+  "urls_raw": 1811,
+  "channels_out": 377,
+  "urls_out": 691,
+  "groups": 58,
+  "probe_seconds": 543
+ },
+ "sources": [
+  {
+   "id": "fmml",
+   "name": "fanmingming/live（IPV6直连）",
+   "ok": true,
+   "used_url": "https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u",
+   "error": "",
+   "entries": 82,
+   "urls": 82,
+   "last_success_at": "2026-11-19 19:12:39",
+   "last_failure_at": null,
+   "consecutive_failures": 0,
+   "urls_trend": [
+    82,
+    82,
+    82,
+    82,
+    82,
+    82,
+    82,
+    82,
+    82,
+    82
+   ]
+  },
+  {
+   "id": "iptv-org-cn",
+   "name": "iptv-org（中国）",
+   "ok": true,
+   "used_url": "https://iptv-org.github.io/iptv/countries/cn.m3u",
+   "error": "",
+   "entries": 151,
+   "urls": 151,
+   "last_success_at": "2026-11-19 19:12:39",
+   "last_failure_at": null,
+   "consecutive_failures": 0,
+   "urls_trend": [
+    151,
+    151,
+    151,
+    151,
+    151,
+    151,
+    151,
+    151,
+    151,
+    151
+   ]
+  },
+  {
+   "id": "iptv-org-zho",
+   "name": "iptv-org（中文语区）",
+   "ok": true,
+   "used_url": "https://iptv-org.github.io/iptv/languages/zho.m3u",
+   "error": "",
+   "entries": 222,
+   "urls": 78,
+   "last_success_at": "2026-11-19 19:12:39",
+   "last_failure_at": null,
+   "consecutive_failures": 0,
+   "urls_trend": [
+    78,
+    78,
+    78,
+    78,
+    78,
+    78,
+    78,
+    78,
+    78,
+    78
+   ]
+  },
+  {
+   "id": "iptv-api",
+   "name": "Guovin/iptv-api（每日自选）",
+   "ok": true,
+   "used_url": "https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u",
+   "error": "",
+   "entries": 1616,
+   "urls": 1500,
+   "last_success_at": "2026-11-19 19:12:39",
+   "last_failure_at": null,
+   "consecutive_failures": 0,
+   "urls_trend": [
+    1500,
+    1500,
+    1500,
+    1500,
+    1500,
+    1500,
+    1500,
+    1500,
+    1500,
+    1500
+   ]
+  }
+ ]
+}

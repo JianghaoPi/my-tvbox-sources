@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TVBox 源仓库健康看板</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.6 "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+         background: #0f1115; color: #d7dae0; padding: 24px; max-width: 1080px; margin-inline: auto; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  h2 { font-size: 16px; margin: 0 0 12px; color: #9cc4ff; }
+  .meta { color: #7a8190; font-size: 12.5px; margin-bottom: 20px; }
+  .meta b { color: #79c0ff; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 20px; }
+  .card { background: #161b22; border: 1px solid #262c36; border-radius: 10px; padding: 10px 14px; }
+  .card .n { font-size: 22px; font-weight: 600; }
+  .card .t { color: #7a8190; font-size: 12px; }
+  .ok { color: #3fb950; } .warn { color: #d29922; } .bad { color: #f85149; } .info { color: #79c0ff; }
+  section { background: #161b22; border: 1px solid #262c36; border-radius: 10px; padding: 14px 16px; margin-bottom: 16px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; color: #7a8190; font-weight: 500; padding: 4px 8px; border-bottom: 1px solid #262c36; }
+  td { padding: 5px 8px; border-bottom: 1px solid #1c2128; vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #1a2029; }
+  .url { max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #8b949e; }
+  .url a { color: #8b949e; text-decoration: none; }
+  .err { color: #f85149; font-size: 12px; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: inline-block; }
+  .badge { display: inline-block; border-radius: 8px; padding: 0 8px; font-size: 12px; background: #21262d; }
+  .badge.bad { color: #f85149; } .badge.warn { color: #d29922; } .badge.ok { color: #3fb950; }
+  svg.spark { vertical-align: middle; }
+  .footer { color: #555c66; font-size: 12px; margin-top: 24px; text-align: center; }
+  .dim { color: #7a8190; }
+</style>
+</head>
+<body>
+<h1>📺 TVBox 源仓库健康看板</h1>
+<p class="meta" id="meta">加载中…（数据：<code>status.json</code> / <code>live_status.json</code>，随聚合管线自动更新，每 5 分钟自动刷新）</p>
+<div class="cards" id="cards"></div>
+<section>
+  <h2>点播配置源</h2>
+  <table id="t-sources"><thead><tr>
+    <th>状态</th><th>源</th><th>生效地址</th><th>站点</th><th>延迟趋势</th><th>最近成功</th><th>失败</th><th>错误</th>
+  </tr></thead><tbody></tbody></table>
+</section>
+<section>
+  <h2>直播源</h2>
+  <p class="dim" id="live-meta" style="margin:0 0 8px"></p>
+  <table id="t-live"><thead><tr>
+    <th>状态</th><th>直播源</th><th>贡献地址</th><th>地址趋势</th><th>最近成功</th><th>失败</th><th>错误</th>
+  </tr></thead><tbody></tbody></table>
+</section>
+<p class="footer">S3 健康检测闭环 · 数据由 GitHub Actions / CNB 流水线定时聚合生成 · <a style="color:#555c66" href="https://github.com/JianghaoPi/my-tvbox-sources">仓库主页</a></p>
+<script>
+const qs = new URLSearchParams(location.search)
+const BASE = qs.get('base') || '.'
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]))
+const since = (ts) => {
+  if (!ts) return '—'
+  const ms = Date.now() - new Date(ts.replace(' ', 'T')).getTime()
+  if (isNaN(ms)) return esc(ts)
+  const m = Math.max(0, ms / 60000)
+  if (m < 1) return '刚刚'
+  if (m < 60) return Math.floor(m) + ' 分钟前'
+  if (m < 60 * 48) return Math.floor(m / 60) + ' 小时前'
+  return Math.floor(m / 1440) + ' 天前'
+}
+const stateBadge = (ok, cached, cf) => ok ? '<span class="ok">✅</span>'
+  : cached ? '<span class="warn">📦</span>' : `<span class="bad">❌</span>${cf >= 2 ? ` <span class="badge bad">连续${cf}次</span>` : ''}`
+function spark(values, label) {
+  const v = (values || []).filter((x) => typeof x === 'number')
+  if (v.length < 2) return `<span class="dim">${label || ''}</span>`
+  const w = 88, h = 18, max = Math.max(...v), min = Math.min(...v)
+  const pts = v.map((x, i) => `${(i * w) / (v.length - 1)},${h - 2 - ((x - min) / (max - min || 1)) * (h - 4)}`).join(' ')
+  const color = label ? '#79c0ff' : '#3fb950'
+  return `<svg class="spark" width="${w}" height="${h}"><polyline points="${pts}" fill="none" stroke="${color}" stroke-width="1.5"/></svg>`
+}
+function rows(tbody, list, mk) {
+  tbody.innerHTML = list.map(mk).join('') || '<tr><td colspan="8" class="dim">暂无数据</td></tr>'
+}
+async function load() {
+  try {
+    const st = await (await fetch(`${BASE}/status.json?t=${Date.now()}`)).json()
+    const s = st.summary || {}
+    document.getElementById('meta').innerHTML =
+      `<b>${esc(st.repo)}</b> · 点播状态更新于 ${since(st.updated_at)} ·
+       <a style="color:#555c66" href="${BASE}/status.json">原始数据</a>`
+    document.getElementById('cards').innerHTML = [
+      [`${s.ok}/${s.total}`, '点播源可用', s.ok === s.total ? 'ok' : s.ok ? 'warn' : 'bad'],
+      [s.cached ?? 0, '缓存兜底', (s.cached ?? 0) ? 'warn' : 'dim'],
+      [s.runs_tracked ?? '—', '历史运行次数', 'info'],
+    ].map(([n, t, c]) => `<div class="card"><div class="n ${c}">${n}</div><div class="t">${t}</div></div>`).join('')
+    rows(document.querySelector('#t-sources tbody'), st.sources || [], (x) => `<tr>
+      <td>${stateBadge(x.ok, x.cached, x.consecutive_failures || 0)}</td>
+      <td>${esc(x.name)}</td>
+      <td class="url" title="${esc(x.used_url || '')}">${x.used_url ? `<a href="${esc(x.used_url)}" target="_blank">${esc(x.used_url)}</a>` : '—'}</td>
+      <td>${x.sites ?? 0}</td>
+      <td>${spark(x.latency_trend_ms)} <span class="dim">${x.latency_ms ?? '—'}ms</span></td>
+      <td>${since(x.last_success_at)}</td>
+      <td>${x.ok ? '—' : `<span class="badge ${'bad'}">${x.consecutive_failures ?? '—'}</span>`}</td>
+      <td title="${esc(x.error || '')}"><span class="err">${esc(x.error || '—')}</span></td>
+    </tr>`)
+    try {
+      const lv = await (await fetch(`${BASE}/live_status.json?t=${Date.now()}`)).json()
+      const ls = lv.summary || {}
+      document.getElementById('live-meta').textContent =
+        `更新于 ${since(lv.updated_at)} · ${ls.channels_out ?? '—'} 频道 / ${ls.urls_out ?? '—'} 有效地址（原始 ${ls.urls_raw ?? '—'}） · ${ls.upstream_ok ?? '—'}/${ls.upstream_total ?? '—'} 上游可用`
+      rows(document.querySelector('#t-live tbody'), lv.sources || [], (x) => `<tr>
+        <td>${stateBadge(x.ok, false, x.consecutive_failures || 0)}</td>
+        <td>${esc(x.name)}</td>
+        <td>${x.urls ?? 0} / ${x.entries ?? 0}</td>
+        <td>${spark(x.urls_trend, '地址数')}</td>
+        <td>${since(x.last_success_at)}</td>
+        <td>${x.ok ? '—' : `<span class="badge bad">${x.consecutive_failures ?? '—'}</span>`}</td>
+        <td title="${esc(x.error || '')}"><span class="err">${esc(x.error || '—')}</span></td>
+      </tr>`)
+    } catch { document.getElementById('live-meta').textContent = 'live_status.json 不可用' }
+  } catch (e) {
+    document.getElementById('meta').innerHTML = `<span class="bad">加载失败：${esc(e.message)}——若刚开启 Pages，请等首次部署完成。</span>`
+  }
+}
+load()
+setInterval(load, 5 * 60 * 1000)
+</script>
+</body>
+</html>

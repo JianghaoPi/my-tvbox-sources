@@ -1,0 +1,311 @@
+{
+ "updated_at": "2026-11-19 22:44:30",
+ "repo": "JianghaoPi/my-tvbox-sources",
+ "summary": {
+  "total": 12,
+  "ok": 12,
+  "cached": 0,
+  "disabled": 3,
+  "runs_tracked": 60
+ },
+ "validation": "config_and_spider_header_only; playback_not_tested",
+ "aggregate": {
+  "source_id": "qist",
+  "source_name": "qist家庭合集",
+  "cached": false,
+  "sites": 163,
+  "policy": "complete_config_fallback"
+ },
+ "disabled_sources": [
+  {
+   "id": "ouge",
+   "name": "讴歌",
+   "reason": "2026-11-19：旧接口 403，新候选接口 404 或 TLS 主机名不匹配；未找到同时通过配置与依赖检查的替代入口，暂时停用。"
+  },
+  {
+   "id": "ok",
+   "name": "OK",
+   "reason": "2026-11-19：ok321.top / ok213.top 连接失败，公开 jihulab 备用接口 401；暂时停用。"
+  },
+  {
+   "id": "qiaoji",
+   "name": "巧技（原巧记）",
+   "reason": "2026-11-19：cdn.qiaoji8.com 连接失败，pandown.pro 的 HTTP/HTTPS 备用接口均超时；暂时停用。"
+  }
+ ],
+ "sources": [
+  {
+   "id": "feimao",
+   "name": "肥猫",
+   "ok": true,
+   "cached": false,
+   "used_url": "http://肥猫.net/",
+   "error": null,
+   "sites": 41,
+   "latency_ms": 2065,
+   "consecutive_failures": 0,
+   "last_success_at": "2026-11-19 22:44:30",
+   "last_failure_at": "2026-11-19 19:03:35",
+   "latency_trend_ms": [
+    117393,
+    121913,
+    117753,
+    116150,
+    117684,
+    117226,
+    117640,
+    116821,
+    117909,
+    2065
+   ]
+  },
+  {
+   "id": "fantaiying",
+   "name": "饭太硬",
+   "ok": true,
+   "cached": false,
+   "used_url": "https://www.饭太硬.cc/tv",
+   "error": null,
+   "sites": 49,
+   "latency_ms": 367,
+   "consecutive_failures": 0,
+   "last_success_at": "2026-11-19 22:44:30",
+   "last_failure_at": "2026-11-19 19:03:35",
+   "latency_trend_ms": [
+    39494,
+    40484,
+    39027,
+    37632,
+    39399,
+    37782,
+    39751,
+    38386,
+    39450,
+    367
+   ]
+  },
+  {
+   "id": "wangerxiao",
+   "name": "王二小",
+   "ok": true,
+   "cached": false,
+   "used_url": "https://d.kstore.dev/download/9280/wex.json",
+   "error": null,
+   "sites": 100,
+   "latency_ms": 1227,
+   "consecutive_failures": 0,
+   "last_success_at": "2026-11-19 22:44:30",
+   "last_failure_at": null,
+   "latency_trend_ms": [
+    379,
+    352,
+    365,
+    192,
+    305,
+    267,
+    251,
+    253,
+    286,
+    1227
+   ]
+  },
+  {
+   "id": "moyu",
+   "name": "摸鱼",
+   "ok": true,
+   "cached": false,
+   "used_url": "https://6800.kstore.vip/fish.json",
+   "error": null,
+   "sites": 111,
+   "latency_ms": 40466,
+   "consecutive_failures": 0,
+   "last_success_at": "2026-11-19 22:44:30",
+   "last_failure_at": "2026-11-19 19:03:35",
+   "latency_trend_ms": [
+    25594,
+    26078,
+    25487,
+    25346,
+    25357,
+    24891,
+    25869,
+    25754,
+    26430,
+    40466
+   ]
+  },
+  {
+   "id": "xiaomi",
+   "name": "小米",
+   "ok": true,
+   "cached": false,
+   "used_url": "https://raw.githubusercontent.com/ggrrttyyiii/CatVodSpider/main/json/demo.json",
+   "error": null,
+   "sites": 44,
+   "latency_ms": 2476,
+   "consecutive_failures": 0,
+   "last_success_at": "2026-11-19 22:44:30",
+   "last_failure_at": "2026-11-19 19:03:35",
+   "latency_trend_ms": [
+    40303,
+    38487,
+    42727,
+    14484,
+    42588,
+    13526,
+    40095,
+    38102,
+    74749,
+    2476
+   ]
+  },
+  {
+   "id": "4k",
+   "name": "小盒子（单仓）",
+   "ok": true,
+   "cached": false,
+   "used_url": "http://xhztv.top/xhz/",
+   "error": null,
+   "sites": 54,
+   "latency_ms": 1735,
+   "consecutive_failures": 0,
+   "last_success_at": "2026-11-19 22:44:30",
+   "last_failure_at": null,
+   "latency_trend_ms": [
+    156,
+    160,
+    152,
+    113,
+    195,
+    156,
+    186,
+    143,
+    113,
+    1735
+   ]
+  },
+  {
+   "id": "xiaosa",
+   "name": "潇洒",
+   "ok": true,
+   "cached": false,
+   "used_url": "https://9877.kstore.space/sun.json",
+   "error": null,
+   "sites": 119,
+   "latency_ms": 2449,
+   "consecutive_failures": 0,
+   "last_success_at": "2026-11-19 22:44:30",
+   "last_failure_at": "2026-11-19 19:03:35",
+   "latency_trend_ms": [
+    666,
+    1072,
+    601,
+    683,
+    916,
+    867,
+    817,
+    115691,
+    70116,
+    2449
+   ]
+  },
+  {
+   "id": "fongmi",
+   "name": "FongMi（本地/WebDAV示例）",
+   "ok": true,
+   "cached": false,
+   "used_url": "https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/config.json",
+   "error": null,
+   "sites": 3,
+   "latency_ms": 313,
+   "consecutive_failures": 0,
+   "last_success_at": "2026-11-19 22:44:30",
+   "last_failure_at": null,
+   "latency_trend_ms": [
+    74,
+    5134,
+    64,
+    81,
+    105,
+    48,
+    136,
+    79,
+    27,
+    313
+   ]
+  },
+  {
+   "id": "qist",
+   "name": "qist家庭合集",
+   "ok": true,
+   "cached": false,
+   "used_url": "https://raw.githubusercontent.com/qist/tvbox/master/jsm.json",
+   "error": null,
+   "sites": 163,
+   "latency_ms": 805,
+   "consecutive_failures": 0,
+   "last_success_at": "2026-11-19 22:44:30",
+   "last_failure_at": null,
+   "latency_trend_ms": [
+    78,
+    106,
+    53,
+    105,
+    74,
+    38,
+    97,
+    104,
+    65,
+    805
+   ]
+  },
+  {
+   "id": "nanfeng",
+   "name": "南风",
+   "ok": true,
+   "cached": false,
+   "used_url": "https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json",
+   "error": null,
+   "sites": 93,
+   "latency_ms": 520,
+   "consecutive_failures": 0,
+   "last_success_at": "2026-11-19 22:44:30",
+   "last_failure_at": null,
+   "latency_trend_ms": [
+    520
+   ]
+  },
+  {
+   "id": "xyq",
+   "name": "香雅情",
+   "ok": true,
+   "cached": false,
+   "used_url": "https://raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQTVBox.json",
+   "error": null,
+   "sites": 48,
+   "latency_ms": 9,
+   "consecutive_failures": 0,
+   "last_success_at": "2026-11-19 22:44:30",
+   "last_failure_at": null,
+   "latency_trend_ms": [
+    9
+   ]
+  },
+  {
+   "id": "liucn",
+   "name": "老刘备",
+   "ok": true,
+   "cached": false,
+   "used_url": "https://raw.liucn.cc/box/m.json",
+   "error": null,
+   "sites": 234,
+   "latency_ms": 307,
+   "consecutive_failures": 0,
+   "last_success_at": "2026-11-19 22:44:30",
+   "last_failure_at": null,
+   "latency_trend_ms": [
+    307
+   ]
+  }
+ ]
+}

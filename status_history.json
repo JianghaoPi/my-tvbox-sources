@@ -1,0 +1,3904 @@
+{
+ "runs": [
+  {
+   "ts": "2026-10-21 02:54:36",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 58979
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 63041
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 201
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13979
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25084
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24537
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42096
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12174
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 30
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 18445
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 135
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 95
+    }
+   }
+  },
+  {
+   "ts": "2026-10-21 16:12:18",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 58920
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 65795
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 173
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 12909
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 30665
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24728
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 36313
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12124
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 26
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 654
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 120
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 234
+    }
+   }
+  },
+  {
+   "ts": "2026-10-22 03:07:02",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 59488
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 69909
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 237
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13758
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25917
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24616
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42030
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12334
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 191
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 579
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 129
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 105
+    }
+   }
+  },
+  {
+   "ts": "2026-10-22 16:12:46",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 61205
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 68293
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 397
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13531
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 26122
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24707
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42813
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 22033
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 323
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 888
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 154
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 114
+    }
+   }
+  },
+  {
+   "ts": "2026-10-23 03:02:29",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 59302
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 69113
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 310
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13339
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25992
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24539
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 36186
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12319
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 173
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 545
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 132
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 106
+    }
+   }
+  },
+  {
+   "ts": "2026-10-23 16:11:19",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 59570
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 68361
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 369
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13078
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25684
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 26353
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 40383
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12260
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 143
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 765
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 115
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 39
+    }
+   }
+  },
+  {
+   "ts": "2026-10-24 02:52:37",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 59027
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 68111
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 160
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 12898
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25360
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24632
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42302
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12312
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 26
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 391
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 128
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 106
+    }
+   }
+  },
+  {
+   "ts": "2026-10-24 15:50:11",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 59516
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 68360
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 332
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13149
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25790
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24911
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42528
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12285
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 188
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 546
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 133
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 111
+    }
+   }
+  },
+  {
+   "ts": "2026-10-25 01:47:52",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 59804
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 65361
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 127
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 12978
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25338
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24551
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42309
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12112
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 34
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 470
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 134
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 111
+    }
+   }
+  },
+  {
+   "ts": "2026-10-25 16:00:37",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 59429
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 65708
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 372
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13110
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25386
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24872
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 40147
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12289
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 149
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 1094
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 100
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 58
+    }
+   }
+  },
+  {
+   "ts": "2026-10-26 02:03:57",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 59468
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 64694
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 567
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13134
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25569
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24690
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42739
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12472
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 144
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 552
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 65
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 52
+    }
+   }
+  },
+  {
+   "ts": "2026-10-26 16:22:37",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 60512
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 69005
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 273
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13056
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25551
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24821
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 37813
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12304
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 164
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 666
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 88
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 77
+    }
+   }
+  },
+  {
+   "ts": "2026-10-27 04:18:00",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 59066
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 65572
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 193
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13000
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25869
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24225
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 36729
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12325
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 66
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 467
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 357
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 255
+    }
+   }
+  },
+  {
+   "ts": "2026-10-27 16:35:54",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 65616
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 65475
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 222
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13224
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25639
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24572
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42514
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12443
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 164
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24833
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 150
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 95
+    }
+   }
+  },
+  {
+   "ts": "2026-10-28 03:49:42",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 59297
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 68264
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 474
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13200
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25501
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24609
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39038
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12298
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 144
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25236
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 105
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 41
+    }
+   }
+  },
+  {
+   "ts": "2026-10-28 17:13:49",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 59481
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 71405
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 365
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 28487
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25619
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24761
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42660
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12400
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 154
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 893
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 64
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 46
+    }
+   }
+  },
+  {
+   "ts": "2026-10-29 04:03:39",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 59413
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 68548
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 402
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13291
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 26351
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24792
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 40631
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12694
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 187
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 598
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 120
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 96
+    }
+   }
+  },
+  {
+   "ts": "2026-10-29 17:12:54",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 59448
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 67627
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 419
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13132
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25965
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24613
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 37467
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12301
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 143
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 971
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 69
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 56
+    }
+   }
+  },
+  {
+   "ts": "2026-10-30 04:03:06",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 59400
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 68624
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 330
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14497
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25844
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24744
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42772
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12197
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 147
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 572
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 80
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 70
+    }
+   }
+  },
+  {
+   "ts": "2026-10-30 17:24:36",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 59389
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 100197
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 233
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13650
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25822
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24619
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 75843
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12299
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 116
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 605
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 147
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 138
+    }
+   }
+  },
+  {
+   "ts": "2026-10-31 03:51:18",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 59214
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 68434
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 283
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14844
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25618
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24816
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42438
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12338
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 360
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 743
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 136
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 174
+    }
+   }
+  },
+  {
+   "ts": "2026-10-31 17:10:43",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 59586
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 68386
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 298
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14726
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25642
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24607
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42705
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12329
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 143
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 658
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 47
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 44
+    }
+   }
+  },
+  {
+   "ts": "2026-11-01 03:00:22",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 58909
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 68038
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 169
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14508
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25962
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24749
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 38990
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12190
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 89
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 369
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 87
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 70
+    }
+   }
+  },
+  {
+   "ts": "2026-11-01 18:00:36",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 59134
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 97667
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 287
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14399
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 26427
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24771
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 77484
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12244
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 109
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 614
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 89
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 73
+    }
+   }
+  },
+  {
+   "ts": "2026-11-02 03:23:15",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 59409
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 65756
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 308
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14712
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 26041
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24762
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 40377
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12410
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 193
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 100962
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 151
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 272
+    }
+   }
+  },
+  {
+   "ts": "2026-11-02 18:25:15",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 59234
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 66568
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 227
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14682
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 26059
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24541
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 40215
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12322
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 174
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39871
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 137
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 171
+    }
+   }
+  },
+  {
+   "ts": "2026-11-03 07:02:13",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 116809
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 68434
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 212
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 38190
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25398
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24584
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 36133
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12212
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 86
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 472
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 145
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 102
+    }
+   }
+  },
+  {
+   "ts": "2026-11-03 18:24:08",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 116541
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 68580
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 184
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13996
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 26002
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24645
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 36234
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12396
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 127
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 445
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 185
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 151
+    }
+   }
+  },
+  {
+   "ts": "2026-11-04 04:47:50",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 116674
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 69037
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 185
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13792
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25604
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24575
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42598
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12474
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 69
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 416
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 203
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 118
+    }
+   }
+  },
+  {
+   "ts": "2026-11-05 05:04:07",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 116394
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 38588
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 120
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13832
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25909
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24663
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 35201
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12119
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 25
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 430
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 108
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 11
+    }
+   }
+  },
+  {
+   "ts": "2026-11-05 18:10:22",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 118342
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39122
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 357
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14252
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 26052
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24861
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 41648
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12189
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 190
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 633
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 98
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 63
+    }
+   }
+  },
+  {
+   "ts": "2026-11-06 05:22:00",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 116256
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 38226
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 207
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14149
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25704
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24507
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 38126
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12219
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 106
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 439
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 102
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 89
+    }
+   }
+  },
+  {
+   "ts": "2026-11-06 18:15:02",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 117660
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39569
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 279
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 15285
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 26852
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24366
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39860
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12431
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 208
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 540
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 180
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 106
+    }
+   }
+  },
+  {
+   "ts": "2026-11-07 04:43:52",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 116486
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39436
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 188
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14001
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25718
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24395
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 40313
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12317
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 72
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 427
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 314
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 294
+    }
+   }
+  },
+  {
+   "ts": "2026-11-07 17:31:39",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 119347
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39635
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 264
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 15025
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25778
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24679
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42736
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12344
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 187
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 920
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 127
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 92
+    }
+   }
+  },
+  {
+   "ts": "2026-11-08 03:17:34",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 116659
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39095
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 214
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14037
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25774
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24630
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39062
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12272
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 199
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 483
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 161
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 112
+    }
+   }
+  },
+  {
+   "ts": "2026-11-08 17:48:55",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 117617
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39427
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 252
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13770
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25743
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24698
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42269
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12249
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 117
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 525
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 27
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 85
+    }
+   }
+  },
+  {
+   "ts": "2026-11-09 03:19:40",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 117239
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39088
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 287
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14439
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25653
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24561
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42653
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12431
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 197
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 651
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 287
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 168
+    }
+   }
+  },
+  {
+   "ts": "2026-11-09 18:44:55",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 118116
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 38831
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 385
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 16470
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 26094
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25594
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42785
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12249
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 390
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 706
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 58
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 42
+    }
+   }
+  },
+  {
+   "ts": "2026-11-10 07:43:38",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 117213
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39300
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 312
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 15256
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25588
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24929
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42566
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12596
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 240
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 755
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 140
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 98
+    }
+   }
+  },
+  {
+   "ts": "2026-11-10 18:42:35",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 118254
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39431
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 315
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 15025
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 26938
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24803
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 36835
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12259
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 164
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 868
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 84
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 120
+    }
+   }
+  },
+  {
+   "ts": "2026-11-11 05:11:23",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 117398
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39495
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 288
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14616
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25898
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24804
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42472
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12317
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 184
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 957
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 110
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 120
+    }
+   }
+  },
+  {
+   "ts": "2026-11-11 18:08:31",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 116528
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39121
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 159
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14106
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25313
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24399
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39828
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12323
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 72
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 538
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 131
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 180
+    }
+   }
+  },
+  {
+   "ts": "2026-11-12 05:44:33",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 117645
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 38922
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 318
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14305
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25920
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24531
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39787
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12215
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 230
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 1032
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 134
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 95
+    }
+   }
+  },
+  {
+   "ts": "2026-11-12 18:33:50",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 120101
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 38265
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 521
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14513
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25394
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24580
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 36826
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12271
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 147
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 683
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 66
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 60
+    }
+   }
+  },
+  {
+   "ts": "2026-11-13 05:44:24",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 117585
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39476
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 369
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14858
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25848
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25285
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42715
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12598
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 172
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 788
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 117
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 66
+    }
+   }
+  },
+  {
+   "ts": "2026-11-13 18:27:34",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 117701
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 38810
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 232
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13887
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25883
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24843
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 74632
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12278
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 144
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 572
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 101
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 167
+    }
+   }
+  },
+  {
+   "ts": "2026-11-14 05:10:43",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 118019
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39639
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 320
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14656
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25582
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25017
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42110
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12310
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 154
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 712
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 135
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 65
+    }
+   }
+  },
+  {
+   "ts": "2026-11-14 17:44:05",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 118521
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 38989
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 242
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14938
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25852
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24762
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42582
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12586
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 188
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 736
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 98
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 131
+    }
+   }
+  },
+  {
+   "ts": "2026-11-15 03:42:04",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 116457
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 38738
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 170
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13897
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25556
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25082
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42287
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12161
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 25
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 471
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 136
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 100
+    }
+   }
+  },
+  {
+   "ts": "2026-11-15 18:16:17",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 117393
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39494
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 379
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14475
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25594
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25056
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 40303
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12459
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 156
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 666
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 74
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 78
+    }
+   }
+  },
+  {
+   "ts": "2026-11-16 04:07:41",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 121913
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 40484
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 352
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14789
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 26078
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24547
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 38487
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12325
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 160
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 1072
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 5134
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 106
+    }
+   }
+  },
+  {
+   "ts": "2026-11-16 18:28:29",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 117753
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39027
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 365
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14872
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25487
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24755
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42727
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12249
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 152
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 601
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 64
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 53
+    }
+   }
+  },
+  {
+   "ts": "2026-11-17 07:39:49",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 116150
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 37632
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 192
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14155
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25346
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24210
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 14484
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12394
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 113
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 683
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 81
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 105
+    }
+   }
+  },
+  {
+   "ts": "2026-11-17 19:26:37",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 117684
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39399
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 305
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 21370
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25357
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24990
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 42588
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12462
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 195
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 916
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 105
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 74
+    }
+   }
+  },
+  {
+   "ts": "2026-11-18 06:48:00",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 117226
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 37782
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 267
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14844
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24891
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24130
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 13526
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12243
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 156
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 867
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 48
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 38
+    }
+   }
+  },
+  {
+   "ts": "2026-11-18 18:59:34",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 117640
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39751
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 251
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 14330
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25869
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24445
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 40095
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12266
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 186
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 817
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 136
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 97
+    }
+   }
+  },
+  {
+   "ts": "2026-11-19 06:32:12",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 116821
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 38386
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 253
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13947
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 25754
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24795
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 38102
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12338
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 143
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 115691
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 79
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 104
+    }
+   }
+  },
+  {
+   "ts": "2026-11-19 19:03:35",
+   "sources": {
+    "feimao": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 117909
+    },
+    "fantaiying": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 39450
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 286
+    },
+    "ouge": {
+     "ok": false,
+     "cached": true,
+     "latency_ms": 13960
+    },
+    "moyu": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 26430
+    },
+    "ok": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 24645
+    },
+    "xiaomi": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 74749
+    },
+    "qiaoji": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 12190
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 113
+    },
+    "xiaosa": {
+     "ok": false,
+     "cached": false,
+     "latency_ms": 70116
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 27
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 65
+    }
+   }
+  },
+  {
+   "ts": "2026-11-19 22:44:30",
+   "sources": {
+    "feimao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 2065
+    },
+    "fantaiying": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 367
+    },
+    "wangerxiao": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 1227
+    },
+    "moyu": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 40466
+    },
+    "xiaomi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 2476
+    },
+    "4k": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 1735
+    },
+    "xiaosa": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 2449
+    },
+    "fongmi": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 313
+    },
+    "qist": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 805
+    },
+    "nanfeng": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 520
+    },
+    "xyq": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 9
+    },
+    "liucn": {
+     "ok": true,
+     "cached": false,
+     "latency_ms": 307
+    }
+   }
+  }
+ ]
+}
