@@ -65,19 +65,19 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 当前源状态
 
 <!-- STATUS-START -->
-> 自动更新于 2026-11-21 06:04（12/12 源通过配置及 JAR 检查，未验证逐站播放）。 手动触发：Actions → update → Run workflow。
+> 自动更新于 2026-11-21 18:28（12/12 源通过配置及 JAR 检查，未验证逐站播放）。 手动触发：Actions → update → Run workflow。
 
 | 源 | 状态 | 生效地址 | 站点 | 错误 |
 |---|---|---|---|---|
 | 肥猫 | ✅ | http://肥猫.net/ | 41 | - |
-| 饭太硬 | ✅ | https://www.饭太硬.cc/tv | 49 | - |
+| 饭太硬 | ✅ | https://www.饭太硬.cc/tv | 50 | - |
 | 王二小 | ✅ | https://d.kstore.dev/download/9280/wex.json | 100 | - |
 | 摸鱼 | ✅ | http://我不是.摸鱼儿.cc/ | 109 | - |
-| 小米 | ✅ | https://raw.githubusercontent.com/ggrrttyyiii/CatVodSpide... | 44 | - |
+| 小米 | ✅ | https://raw.githubusercontent.com/ggrrttyyiii/CatVodSpide... | 43 | - |
 | 小盒子（单仓） | ✅ | http://xhztv.top/xhz/ | 54 | - |
-| 潇洒 | ✅ | https://9877.kstore.space/sun.json | 119 | - |
+| 潇洒 | ✅ | https://9877.kstore.space/sun.json | 116 | - |
 | FongMi（本地/WebDAV示例） | ✅ | https://raw.githubusercontent.com/FongMi/CatVodSpider/mai... | 3 | - |
-| qist家庭合集 | ✅ | https://raw.githubusercontent.com/qist/tvbox/master/jsm.json | 165 | - |
+| qist家庭合集 | ✅ | https://raw.githubusercontent.com/qist/tvbox/master/jsm.json | 162 | - |
 | 南风 | ✅ | https://raw.githubusercontent.com/yoursmile66/TVBox/main/... | 93 | - |
 | 香雅情 | ✅ | https://raw.githubusercontent.com/xyq254245/xyqonlinerule... | 48 | - |
 | 老刘备 | ✅ | https://raw.liucn.cc/box/m.json | 234 | - |
@@ -86,7 +86,7 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 直播源状态
 
 <!-- LIVE-START -->
-> 直播源自动更新于 2026-11-21 06:12：上游 4/4 可用，产出 **375** 频道 / **690** 条有效地址（原始 1811，测速剔除失效 1121）。 手动触发：Actions → update → Run workflow。
+> 直播源自动更新于 2026-11-21 18:37：上游 4/4 可用，产出 **371** 频道 / **673** 条有效地址（原始 1811，测速剔除失效 1138）。 手动触发：Actions → update → Run workflow。
 
 | 直播源 | 状态 | 生效地址 | 素材条目 | 贡献地址 | 错误 |
 |---|---|---|---|---|---|
