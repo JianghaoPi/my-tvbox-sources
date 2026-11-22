@@ -65,13 +65,13 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 当前源状态
 
 <!-- STATUS-START -->
-> 自动更新于 2026-11-22 18:33（12/12 源通过配置及 JAR 检查，未验证逐站播放）。 手动触发：Actions → update → Run workflow。
+> 自动更新于 2026-11-23 04:54（11/12 源通过配置及 JAR 检查，未验证逐站播放）。 手动触发：Actions → update → Run workflow。
 
 | 源 | 状态 | 生效地址 | 站点 | 错误 |
 |---|---|---|---|---|
-| 肥猫 | ✅ | http://肥猫.net/ | 40 | - |
+| 肥猫 | 📦 缓存兜底 | - | 40 | 肥猫.net/: HTTP 522; hello.肥猫.net/: HTTP 522 |
 | 饭太硬 | ✅ | https://www.饭太硬.cc/tv | 50 | - |
-| 王二小 | ✅ | https://d.kstore.dev/download/9280/wex.json | 100 | - |
+| 王二小 | ✅ | https://d.kstore.dev/download/9280/wex.json | 99 | - |
 | 摸鱼 | ✅ | http://我不是.摸鱼儿.cc/ | 109 | - |
 | 小米 | ✅ | https://raw.githubusercontent.com/ggrrttyyiii/CatVodSpide... | 43 | - |
 | 小盒子（单仓） | ✅ | http://xhztv.top/xhz/ | 54 | - |
@@ -86,7 +86,7 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 直播源状态
 
 <!-- LIVE-START -->
-> 直播源自动更新于 2026-11-22 18:41：上游 4/4 可用，产出 **373** 频道 / **686** 条有效地址（原始 1811，测速剔除失效 1125）。 手动触发：Actions → update → Run workflow。
+> 直播源自动更新于 2026-11-23 05:03：上游 4/4 可用，产出 **373** 频道 / **683** 条有效地址（原始 1811，测速剔除失效 1128）。 手动触发：Actions → update → Run workflow。
 
 | 直播源 | 状态 | 生效地址 | 素材条目 | 贡献地址 | 错误 |
 |---|---|---|---|---|---|
