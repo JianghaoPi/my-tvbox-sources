@@ -1,5 +1,5 @@
 {
- "spider": "https://aly2.tuchuangyun.top/autoupload/g1b6f/20261122/dXpY/0X0/11221706.png;md5;13a3d15bdc38794e575853c4c9b9e24e",
+ "spider": "https://raw.githubusercontent.com/qist/tvbox/master/xiaosa/spider.jar;md5;efdb2c1d9a2e8c26e5a74ba5f53dfc56",
  "wallpaper": "http://127.0.0.1:9978/proxy?do=wallpaper",
  "logo": "https://pic7.fukit.cn/autoupload/gE6Y0Af2tjXBCNig6CtNDI12_FRYNb81z6UPhMWD8iI/20251224/dJkT/1080X1080/logo.jpg/webp",
  "danmaku": "http://127.0.0.1:9978/proxy?do=danmaku&name={name}&episode={episode}",
@@ -75,7 +75,7 @@
    "searchable": 1,
    "quickSearch": 1,
    "filterable": 0,
-   "ext": "https://www.pjb777.top/ky4kbgq7b273.json"
+   "ext": "https://raw.githubusercontent.com/qist/tvbox/master/xiaosa/json/ky4kbgq7b273.json"
   },
   {
    "key": "一起影视",
@@ -656,7 +656,7 @@
    "key": "红果短剧",
    "name": "红果 • 短剧",
    "type": 3,
-   "api": "https://oss-v1.wangmeipo.cn/236/红果短剧.py",
+   "api": "https://raw.githubusercontent.com/qist/tvbox/master/xiaosa/py/红果短剧.py",
    "genre": "shortdrama"
   },
   {
@@ -1153,7 +1153,7 @@
    "key": "世界听书",
    "name": "世界 • 听书",
    "type": 3,
-   "api": "https://oss-v1.wangmeipo.cn/236/世界听书.py",
+   "api": "https://raw.githubusercontent.com/qist/tvbox/master/xiaosa/py/世界听书.py",
    "style": {
     "type": "list"
    }
@@ -1328,7 +1328,7 @@
    "quickSearch": 0,
    "changeable": 0,
    "ext": {
-    "json": "https://pizazz.us.ci/education/json/SEJY.json",
+    "json": "https://raw.githubusercontent.com/qist/tvbox/master/xiaosa/json/SEJY.json",
     "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
    },
    "style": {
@@ -1345,7 +1345,7 @@
    "quickSearch": 0,
    "changeable": 0,
    "ext": {
-    "json": "https://pizazz.us.ci/education/json/XXKT.json",
+    "json": "https://raw.githubusercontent.com/qist/tvbox/master/xiaosa/json/XXKT.json",
     "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
    },
    "style": {
@@ -1362,7 +1362,7 @@
    "quickSearch": 0,
    "changeable": 0,
    "ext": {
-    "json": "https://pizazz.us.ci/education/json/CZKT.json",
+    "json": "https://raw.githubusercontent.com/qist/tvbox/master/xiaosa/json/CZKT.json",
     "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
    },
    "style": {
@@ -1379,7 +1379,7 @@
    "quickSearch": 0,
    "changeable": 0,
    "ext": {
-    "json": "https://pizazz.us.ci/education/json/GZKT.json",
+    "json": "https://raw.githubusercontent.com/qist/tvbox/master/xiaosa/json/GZKT.json",
     "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
    },
    "style": {
@@ -1637,26 +1637,21 @@
  "flags": [
   "youku",
   "优酷",
-  "优 酷",
   "优酷视频",
   "qq",
   "腾讯",
-  "腾 讯",
   "腾讯视频",
   "iqiyi",
   "qiyi",
   "奇艺",
   "爱奇艺",
-  "爱 奇 艺",
   "m1905",
   "xigua",
   "letv",
   "leshi",
   "乐视",
-  "乐 视",
   "sohu",
   "搜狐",
-  "搜 狐",
   "搜狐视频",
   "tudou",
   "pptv",
@@ -1664,7 +1659,6 @@
   "芒果",
   "imgo",
   "芒果TV",
-  "芒 果 T V",
   "bilibili",
   "哔 哩",
   "哔 哩 哔 哩"

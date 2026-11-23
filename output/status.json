@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-23 04:54:55",
+ "updated_at": "2026-11-23 19:33:53",
  "repo": "JianghaoPi/my-tvbox-sources",
  "summary": {
   "total": 12,
-  "ok": 11,
-  "cached": 1,
+  "ok": 12,
+  "cached": 0,
   "disabled": 3,
   "runs_tracked": 60
  },
@@ -37,17 +37,16 @@
   {
    "id": "feimao",
    "name": "肥猫",
-   "ok": false,
-   "cached": true,
-   "used_url": null,
-   "error": "肥猫.net/: HTTP 522; hello.肥猫.net/: HTTP 522",
-   "sites": 40,
-   "latency_ms": 75041,
-   "consecutive_failures": 1,
-   "last_success_at": "2026-11-22 18:33:46",
+   "ok": true,
+   "cached": false,
+   "used_url": "http://肥猫.net/",
+   "error": null,
+   "sites": 41,
+   "latency_ms": 2060,
+   "consecutive_failures": 0,
+   "last_success_at": "2026-11-23 19:33:53",
    "last_failure_at": "2026-11-23 04:54:55",
    "latency_trend_ms": [
-    117909,
     2065,
     3987,
     1508,
@@ -56,7 +55,8 @@
     1644,
     2110,
     33471,
-    75041
+    75041,
+    2060
    ]
   },
   {
@@ -67,12 +67,11 @@
    "used_url": "https://www.饭太硬.cc/tv",
    "error": null,
    "sites": 50,
-   "latency_ms": 897,
+   "latency_ms": 1185,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-23 04:54:55",
+   "last_success_at": "2026-11-23 19:33:53",
    "last_failure_at": "2026-11-19 19:03:35",
    "latency_trend_ms": [
-    39450,
     367,
     921,
     700,
@@ -81,7 +80,8 @@
     871,
     668,
     807,
-    897
+    897,
+    1185
    ]
   },
   {
@@ -92,12 +92,11 @@
    "used_url": "https://d.kstore.dev/download/9280/wex.json",
    "error": null,
    "sites": 99,
-   "latency_ms": 1116,
+   "latency_ms": 2991,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-23 04:54:55",
+   "last_success_at": "2026-11-23 19:33:53",
    "last_failure_at": null,
    "latency_trend_ms": [
-    286,
     1227,
     1364,
     1751,
@@ -106,7 +105,8 @@
     1113,
     1821,
     1180,
-    1116
+    1116,
+    2991
    ]
   },
   {
@@ -117,12 +117,11 @@
    "used_url": "http://我不是.摸鱼儿.cc/",
    "error": null,
    "sites": 109,
-   "latency_ms": 2593,
+   "latency_ms": 4428,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-23 04:54:55",
+   "last_success_at": "2026-11-23 19:33:53",
    "last_failure_at": "2026-11-19 19:03:35",
    "latency_trend_ms": [
-    26430,
     40466,
     3584,
     3114,
@@ -131,7 +130,8 @@
     3179,
     3586,
     2907,
-    2593
+    2593,
+    4428
    ]
   },
   {
@@ -141,13 +141,12 @@
    "cached": false,
    "used_url": "https://raw.githubusercontent.com/ggrrttyyiii/CatVodSpider/main/json/demo.json",
    "error": null,
-   "sites": 43,
-   "latency_ms": 945,
+   "sites": 44,
+   "latency_ms": 1483,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-23 04:54:55",
+   "last_success_at": "2026-11-23 19:33:53",
    "last_failure_at": "2026-11-19 19:03:35",
    "latency_trend_ms": [
-    74749,
     2476,
     2004,
     1076,
@@ -156,7 +155,8 @@
     2431,
     825,
     1328,
-    945
+    945,
+    1483
    ]
   },
   {
@@ -167,12 +167,11 @@
    "used_url": "http://xhztv.top/xhz/",
    "error": null,
    "sites": 54,
-   "latency_ms": 157,
+   "latency_ms": 286,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-23 04:54:55",
+   "last_success_at": "2026-11-23 19:33:53",
    "last_failure_at": null,
    "latency_trend_ms": [
-    113,
     1735,
     161,
     289,
@@ -181,7 +180,8 @@
     391,
     375,
     130,
-    157
+    157,
+    286
    ]
   },
   {
@@ -189,15 +189,14 @@
    "name": "潇洒",
    "ok": true,
    "cached": false,
-   "used_url": "https://9877.kstore.space/sun.json",
+   "used_url": "https://raw.githubusercontent.com/qist/tvbox/master/xiaosa/api.json",
    "error": null,
    "sites": 116,
-   "latency_ms": 1086,
+   "latency_ms": 54299,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-23 04:54:55",
+   "last_success_at": "2026-11-23 19:33:53",
    "last_failure_at": "2026-11-19 19:03:35",
    "latency_trend_ms": [
-    70116,
     2449,
     2691,
     1098,
@@ -206,7 +205,8 @@
     2427,
     3393,
     2294,
-    1086
+    1086,
+    54299
    ]
   },
   {
@@ -217,12 +217,11 @@
    "used_url": "https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/config.json",
    "error": null,
    "sites": 3,
-   "latency_ms": 125,
+   "latency_ms": 111,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-23 04:54:55",
+   "last_success_at": "2026-11-23 19:33:53",
    "last_failure_at": null,
    "latency_trend_ms": [
-    27,
     313,
     31,
     129,
@@ -231,7 +230,8 @@
     101,
     164,
     265,
-    125
+    125,
+    111
    ]
   },
   {
@@ -242,12 +242,11 @@
    "used_url": "https://raw.githubusercontent.com/qist/tvbox/master/jsm.json",
    "error": null,
    "sites": 162,
-   "latency_ms": 140,
+   "latency_ms": 80,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-23 04:54:55",
+   "last_success_at": "2026-11-23 19:33:53",
    "last_failure_at": null,
    "latency_trend_ms": [
-    65,
     805,
     203,
     118,
@@ -256,7 +255,8 @@
     147,
     324,
     763,
-    140
+    140,
+    80
    ]
   },
   {
@@ -267,9 +267,9 @@
    "used_url": "https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json",
    "error": null,
    "sites": 93,
-   "latency_ms": 1007,
+   "latency_ms": 977,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-23 04:54:55",
+   "last_success_at": "2026-11-23 19:33:53",
    "last_failure_at": null,
    "latency_trend_ms": [
     520,
@@ -280,7 +280,8 @@
     746,
     962,
     1091,
-    1007
+    1007,
+    977
    ]
   },
   {
@@ -291,9 +292,9 @@
    "used_url": "https://raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQTVBox.json",
    "error": null,
    "sites": 48,
-   "latency_ms": 779,
+   "latency_ms": 124,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-23 04:54:55",
+   "last_success_at": "2026-11-23 19:33:53",
    "last_failure_at": null,
    "latency_trend_ms": [
     9,
@@ -304,7 +305,8 @@
     93,
     181,
     290,
-    779
+    779,
+    124
    ]
   },
   {
@@ -315,9 +317,9 @@
    "used_url": "https://raw.liucn.cc/box/m.json",
    "error": null,
    "sites": 234,
-   "latency_ms": 325,
+   "latency_ms": 164,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-23 04:54:55",
+   "last_success_at": "2026-11-23 19:33:53",
    "last_failure_at": null,
    "latency_trend_ms": [
     307,
@@ -328,7 +330,8 @@
     301,
     505,
     310,
-    325
+    325,
+    164
    ]
   }
  ]
