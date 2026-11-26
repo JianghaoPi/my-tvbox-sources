@@ -385,7 +385,8 @@
    "searchable": 1,
    "quickSearch": 1,
    "filterable": 1,
-   "ext": "https://raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQHiker/骚火电影VIP.json"
+   "ext": "https://raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQHiker/骚火电影VIP.json",
+   "click": "document.getElementsByClassName(\"play_btn\")[0].click()"
   },
   {
    "key": "csp_XYQHiker_爱看电影",

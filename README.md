@@ -65,7 +65,7 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 当前源状态
 
 <!-- STATUS-START -->
-> 自动更新于 2026-11-26 07:25（12/12 源通过配置及 JAR 检查，未验证逐站播放）。 手动触发：Actions → update → Run workflow。
+> 自动更新于 2026-11-26 19:44（11/12 源通过配置及 JAR 检查，未验证逐站播放）。 手动触发：Actions → update → Run workflow。
 
 | 源 | 状态 | 生效地址 | 站点 | 错误 |
 |---|---|---|---|---|
@@ -73,7 +73,7 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 | 饭太硬 | ✅ | https://www.饭太硬.cc/tv | 50 | - |
 | 王二小 | ✅ | https://d.kstore.dev/download/9280/wex.json | 95 | - |
 | 摸鱼 | ✅ | http://我不是.摸鱼儿.cc/ | 104 | - |
-| 小米 | ✅ | https://raw.githubusercontent.com/ggrrttyyiii/CatVodSpide... | 44 | - |
+| 小米 | 📦 缓存兜底 | - | 44 | raw.githubusercontent.com/ggrrttyyiii/CatVodSpider: 爬虫依赖 ReadTimeout; cdn.jsd... |
 | 小盒子（单仓） | ✅ | http://xhztv.top/xhz/ | 54 | - |
 | 潇洒 | ✅ | https://9877.kstore.space/sun.json | 115 | - |
 | FongMi（本地/WebDAV示例） | ✅ | https://raw.githubusercontent.com/FongMi/CatVodSpider/mai... | 3 | - |
@@ -86,7 +86,7 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 直播源状态
 
 <!-- LIVE-START -->
-> 直播源自动更新于 2026-11-26 07:33：上游 4/4 可用，产出 **374** 频道 / **694** 条有效地址（原始 1811，测速剔除失效 1117）。 手动触发：Actions → update → Run workflow。
+> 直播源自动更新于 2026-11-26 19:52：上游 4/4 可用，产出 **369** 频道 / **683** 条有效地址（原始 1811，测速剔除失效 1128）。 手动触发：Actions → update → Run workflow。
 
 | 直播源 | 状态 | 生效地址 | 素材条目 | 贡献地址 | 错误 |
 |---|---|---|---|---|---|
