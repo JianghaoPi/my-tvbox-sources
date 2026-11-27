@@ -1,10 +1,10 @@
 {
- "spider": "https://xiuxiu-pro-new.meitudata.com/posters/8ad28c3ad40145e2f9331fe3f8abddb2.jpg;md5;5302302a73a9e27cfaa65f3873b727ab",
+ "spider": "https://xiuxiu-pro-new.meitudata.com/posters/f2f04a7abac733369446629d6650a250.jpg;md5;da4bc13399ce6343619deb2e9dd16fc0",
  "wallpaper": "https://动态壁纸.饭.eu.org/",
  "sites": [
   {
    "key": "点我切源",
-   "name": "片单┃ <修复AI剧>",
+   "name": "片单┃ <Fix所有>",
    "type": 3,
    "api": "csp_DouDouGuard",
    "indexs": 1,

@@ -65,7 +65,7 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 当前源状态
 
 <!-- STATUS-START -->
-> 自动更新于 2026-11-27 07:25（12/12 源通过配置及 JAR 检查，未验证逐站播放）。 手动触发：Actions → update → Run workflow。
+> 自动更新于 2026-11-27 19:37（12/12 源通过配置及 JAR 检查，未验证逐站播放）。 手动触发：Actions → update → Run workflow。
 
 | 源 | 状态 | 生效地址 | 站点 | 错误 |
 |---|---|---|---|---|
@@ -73,12 +73,12 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 | 饭太硬 | ✅ | https://www.饭太硬.cc/tv | 50 | - |
 | 王二小 | ✅ | https://d.kstore.dev/download/9280/wex.json | 95 | - |
 | 摸鱼 | ✅ | http://我不是.摸鱼儿.cc/ | 104 | - |
-| 小米 | ✅ | https://raw.githubusercontent.com/ggrrttyyiii/CatVodSpide... | 44 | - |
+| 小米 | ✅ | https://cdn.jsdelivr.net/gh/ggrrttyyiii/CatVodSpider@main... | 44 | - |
 | 小盒子（单仓） | ✅ | http://xhztv.top/xhz/ | 54 | - |
 | 潇洒 | ✅ | https://9877.kstore.space/sun.json | 115 | - |
 | FongMi（本地/WebDAV示例） | ✅ | https://raw.githubusercontent.com/FongMi/CatVodSpider/mai... | 3 | - |
 | qist家庭合集 | ✅ | https://raw.githubusercontent.com/qist/tvbox/master/jsm.json | 161 | - |
-| 南风 | ✅ | https://raw.githubusercontent.com/yoursmile66/TVBox/main/... | 95 | - |
+| 南风 | ✅ | https://raw.githubusercontent.com/yoursmile66/TVBox/main/... | 96 | - |
 | 香雅情 | ✅ | https://raw.githubusercontent.com/xyq254245/xyqonlinerule... | 48 | - |
 | 老刘备 | ✅ | https://raw.liucn.cc/box/m.json | 234 | - |
 <!-- STATUS-END -->
@@ -86,13 +86,13 @@ config/lives.json   ──► scripts/live.py   ──► output/live.*（直播
 ## 直播源状态
 
 <!-- LIVE-START -->
-> 直播源自动更新于 2026-11-27 07:33：上游 4/4 可用，产出 **366** 频道 / **686** 条有效地址（原始 1811，测速剔除失效 1125）。 手动触发：Actions → update → Run workflow。
+> 直播源自动更新于 2026-11-27 19:44：上游 4/4 可用，产出 **373** 频道 / **683** 条有效地址（原始 1812，测速剔除失效 1129）。 手动触发：Actions → update → Run workflow。
 
 | 直播源 | 状态 | 生效地址 | 素材条目 | 贡献地址 | 错误 |
 |---|---|---|---|---|---|
 | fanmingming/live（IPV6直连） | ✅ | https://raw.githubusercontent.com/fanmingming/live/m... | 82 | 82 | - |
 | iptv-org（中国） | ✅ | https://iptv-org.github.io/iptv/countries/cn.m3u | 151 | 151 | - |
-| iptv-org（中文语区） | ✅ | https://iptv-org.github.io/iptv/languages/zho.m3u | 222 | 78 | - |
+| iptv-org（中文语区） | ✅ | https://iptv-org.github.io/iptv/languages/zho.m3u | 223 | 79 | - |
 | Guovin/iptv-api（每日自选） | ✅ | https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/outpu... | 1616 | 1500 | - |
 <!-- LIVE-END -->
 

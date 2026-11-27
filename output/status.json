@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-27 07:25:03",
+ "updated_at": "2026-11-27 19:37:35",
  "repo": "JianghaoPi/my-tvbox-sources",
  "summary": {
   "total": 12,
@@ -42,12 +42,11 @@
    "used_url": "http://肥猫.net/",
    "error": null,
    "sites": 41,
-   "latency_ms": 2271,
+   "latency_ms": 2043,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-27 07:25:03",
+   "last_success_at": "2026-11-27 19:37:35",
    "last_failure_at": "2026-11-23 04:54:55",
    "latency_trend_ms": [
-    33471,
     75041,
     2060,
     2053,
@@ -56,7 +55,8 @@
     2428,
     2126,
     8348,
-    2271
+    2271,
+    2043
    ]
   },
   {
@@ -67,12 +67,11 @@
    "used_url": "https://www.饭太硬.cc/tv",
    "error": null,
    "sites": 50,
-   "latency_ms": 906,
+   "latency_ms": 796,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-27 07:25:03",
+   "last_success_at": "2026-11-27 19:37:35",
    "last_failure_at": "2026-11-19 19:03:35",
    "latency_trend_ms": [
-    807,
     897,
     1185,
     1115,
@@ -81,7 +80,8 @@
     1263,
     1510,
     933,
-    906
+    906,
+    796
    ]
   },
   {
@@ -92,12 +92,11 @@
    "used_url": "https://d.kstore.dev/download/9280/wex.json",
    "error": null,
    "sites": 95,
-   "latency_ms": 1012,
+   "latency_ms": 1904,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-27 07:25:03",
+   "last_success_at": "2026-11-27 19:37:35",
    "last_failure_at": null,
    "latency_trend_ms": [
-    1180,
     1116,
     2991,
     1382,
@@ -106,7 +105,8 @@
     10975,
     1343,
     2023,
-    1012
+    1012,
+    1904
    ]
   },
   {
@@ -117,12 +117,11 @@
    "used_url": "http://我不是.摸鱼儿.cc/",
    "error": null,
    "sites": 104,
-   "latency_ms": 2040,
+   "latency_ms": 4458,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-27 07:25:03",
+   "last_success_at": "2026-11-27 19:37:35",
    "last_failure_at": "2026-11-19 19:03:35",
    "latency_trend_ms": [
-    2907,
     2593,
     4428,
     3575,
@@ -131,7 +130,8 @@
     3013,
     2918,
     4793,
-    2040
+    2040,
+    4458
    ]
   },
   {
@@ -139,15 +139,14 @@
    "name": "小米",
    "ok": true,
    "cached": false,
-   "used_url": "https://raw.githubusercontent.com/ggrrttyyiii/CatVodSpider/main/json/demo.json",
+   "used_url": "https://cdn.jsdelivr.net/gh/ggrrttyyiii/CatVodSpider@main/json/demo.json",
    "error": null,
    "sites": 44,
-   "latency_ms": 1456,
+   "latency_ms": 13539,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-27 07:25:03",
+   "last_success_at": "2026-11-27 19:37:35",
    "last_failure_at": "2026-11-26 19:44:02",
    "latency_trend_ms": [
-    1328,
     945,
     1483,
     1534,
@@ -156,7 +155,8 @@
     1529,
     1544,
     21882,
-    1456
+    1456,
+    13539
    ]
   },
   {
@@ -167,12 +167,11 @@
    "used_url": "http://xhztv.top/xhz/",
    "error": null,
    "sites": 54,
-   "latency_ms": 103,
+   "latency_ms": 165,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-27 07:25:03",
+   "last_success_at": "2026-11-27 19:37:35",
    "last_failure_at": null,
    "latency_trend_ms": [
-    130,
     157,
     286,
     288,
@@ -181,7 +180,8 @@
     142,
     389,
     102,
-    103
+    103,
+    165
    ]
   },
   {
@@ -192,12 +192,11 @@
    "used_url": "https://9877.kstore.space/sun.json",
    "error": null,
    "sites": 115,
-   "latency_ms": 2120,
+   "latency_ms": 1940,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-27 07:25:03",
+   "last_success_at": "2026-11-27 19:37:35",
    "last_failure_at": "2026-11-19 19:03:35",
    "latency_trend_ms": [
-    2294,
     1086,
     54299,
     1588,
@@ -206,7 +205,8 @@
     1500,
     1340,
     1114,
-    2120
+    2120,
+    1940
    ]
   },
   {
@@ -217,12 +217,11 @@
    "used_url": "https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/config.json",
    "error": null,
    "sites": 3,
-   "latency_ms": 163,
+   "latency_ms": 18,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-27 07:25:03",
+   "last_success_at": "2026-11-27 19:37:35",
    "last_failure_at": null,
    "latency_trend_ms": [
-    265,
     125,
     111,
     92,
@@ -231,7 +230,8 @@
     209,
     174,
     156,
-    163
+    163,
+    18
    ]
   },
   {
@@ -242,12 +242,11 @@
    "used_url": "https://raw.githubusercontent.com/qist/tvbox/master/jsm.json",
    "error": null,
    "sites": 161,
-   "latency_ms": 206,
+   "latency_ms": 41,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-27 07:25:03",
+   "last_success_at": "2026-11-27 19:37:35",
    "last_failure_at": null,
    "latency_trend_ms": [
-    763,
     140,
     80,
     145,
@@ -256,7 +255,8 @@
     332,
     223,
     227,
-    206
+    206,
+    41
    ]
   },
   {
@@ -266,13 +266,12 @@
    "cached": false,
    "used_url": "https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json",
    "error": null,
-   "sites": 95,
-   "latency_ms": 896,
+   "sites": 96,
+   "latency_ms": 816,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-27 07:25:03",
+   "last_success_at": "2026-11-27 19:37:35",
    "last_failure_at": null,
    "latency_trend_ms": [
-    1091,
     1007,
     977,
     930,
@@ -281,7 +280,8 @@
     1021,
     875,
     718,
-    896
+    896,
+    816
    ]
   },
   {
@@ -292,12 +292,11 @@
    "used_url": "https://raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQTVBox.json",
    "error": null,
    "sites": 48,
-   "latency_ms": 208,
+   "latency_ms": 76,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-27 07:25:03",
+   "last_success_at": "2026-11-27 19:37:35",
    "last_failure_at": null,
    "latency_trend_ms": [
-    290,
     779,
     124,
     1942,
@@ -306,7 +305,8 @@
     265,
     326,
     160,
-    208
+    208,
+    76
    ]
   },
   {
@@ -317,12 +317,11 @@
    "used_url": "https://raw.liucn.cc/box/m.json",
    "error": null,
    "sites": 234,
-   "latency_ms": 375,
+   "latency_ms": 416,
    "consecutive_failures": 0,
-   "last_success_at": "2026-11-27 07:25:03",
+   "last_success_at": "2026-11-27 19:37:35",
    "last_failure_at": null,
    "latency_trend_ms": [
-    310,
     325,
     164,
     150,
@@ -331,7 +330,8 @@
     981,
     453,
     376,
-    375
+    375,
+    416
    ]
   }
  ]
